@@ -33,6 +33,7 @@ public class Crosshair : MonoBehaviour
             direction.Normalize();
 
             fireBullet(direction, rotationZ);
+            CinemachineShake.Instance.ShakeCamera(5f, .1f);
         }
     }
 
