@@ -33,7 +33,6 @@ public class Crosshair : MonoBehaviour
             direction.Normalize();
 
             fireBullet(direction, rotationZ);
-            CinemachineShake.Instance.ShakeCamera(5f, .1f);
         }
     }
 
@@ -51,6 +50,6 @@ public class Crosshair : MonoBehaviour
 
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 
-
+        CinemachineShake.Instance.ShakeCamera(.5f, .1f);
     }
 }
