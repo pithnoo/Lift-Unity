@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour
 
     [SerializeField]
     private Transform wallCheck;
+    private Transform playerCheck;
     private Vector2 velocityWorkspace;
 
     public virtual void Start(){
@@ -40,6 +41,10 @@ public class Entity : MonoBehaviour
 
     public virtual bool CheckWall(){
         return Physics2D.Raycast(wallCheck.position, aliveGO.transform.right, entityData.wallCheckDistance, entityData.whatIsGround);
+    }
+
+    public virtual bool EnemyDetect(){
+        return Physics2D.OverlapCircle(playerCheck.position, entityData.playerCheckDistance, entityData.whatIsPlayer);
     }
 
     public virtual void flip(){
