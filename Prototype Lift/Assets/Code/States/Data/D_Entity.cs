@@ -6,7 +6,7 @@ using UnityEngine;
 public class D_Entity : ScriptableObject
 {
     public float wallCheckDistance = 0.2f;
-    public float playerCheckDistance = 0.5f;
+    public float playerCheckDistance = 3f;
     public LayerMask whatIsGround;
     public LayerMask whatIsPlayer;
 }
