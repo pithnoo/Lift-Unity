@@ -8,6 +8,7 @@ public class IdleState : State
     protected bool flipAfterIdle;
     protected bool isIdleTimeOver;
     protected float idleTime;
+    protected bool isPlayerDetected;
     public IdleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -18,6 +19,7 @@ public class IdleState : State
 
         entity.SetVelocity(0f);
         isIdleTimeOver = false;
+        isPlayerDetected = entity.EnemyDetect();
         SetRandomIdleTime();
     }
     public override void Exit()
@@ -40,6 +42,7 @@ public class IdleState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        isPlayerDetected = entity.EnemyDetect();
     }
 
     public void SetFlipAfterIdle(bool flip){
