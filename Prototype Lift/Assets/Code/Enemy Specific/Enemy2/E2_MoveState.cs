@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class E2_MoveState : MoveState
 {
+    private Enemy2 enemy;
     public E2_MoveState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_MoveState stateData, Enemy2 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
-        this.stateData = stateData;
+        this.enemy = enemy;
     }
 
     public override void Enter()
@@ -22,6 +23,11 @@ public class E2_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        
+        if(isPlayerDetected){
+            Debug.Log("detected");
+            stateMachine.ChangeState(enemy.playerDetectedState);
+        }
     }
 
     public override void PhysicsUpdate()

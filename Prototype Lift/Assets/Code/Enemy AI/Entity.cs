@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour
 
     [SerializeField]
     private Transform wallCheck;
+    [SerializeField]
     private Transform playerCheck;
     private Vector2 velocityWorkspace;
 

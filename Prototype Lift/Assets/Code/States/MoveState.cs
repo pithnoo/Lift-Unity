@@ -33,5 +33,6 @@ public class MoveState : State
     {
         base.PhysicsUpdate();
         isDetectingWall = entity.CheckWall();
+        isPlayerDetected = entity.EnemyDetect();
     }
 }

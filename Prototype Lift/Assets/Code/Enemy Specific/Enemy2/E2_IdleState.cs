@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class E2_IdleState : IdleState
 {
+    private Enemy2 enemy;
     public E2_IdleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData, Enemy2 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
-        this.stateData = stateData;
+        this.enemy = enemy;
     }
     public override void Enter()
     {
@@ -19,6 +20,11 @@ public class E2_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        
+        if(isPlayerDetected){
+            stateMachine.ChangeState(enemy.playerDetectedState);
+            Debug.Log("detected");
+        }
     }
     public override void PhysicsUpdate()
     {

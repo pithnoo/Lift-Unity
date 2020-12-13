@@ -15,14 +15,10 @@ public class E1_IdleState : IdleState
         base.Enter();
     }
 
-
-
     public override void Exit()
     {
         base.Exit();
     }
-
- 
 
     public override void LogicUpdate()
     {

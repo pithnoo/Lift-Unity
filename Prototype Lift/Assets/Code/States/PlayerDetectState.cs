@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDetectState : State
 {
     protected D_PlayerDetected stateData;
+    protected bool isPlayerDetected;
     public PlayerDetectState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -12,6 +13,8 @@ public class PlayerDetectState : State
     public override void Enter()
     {
         base.Enter();
+
+        isPlayerDetected = entity.EnemyDetect();
     }
     public override void Exit()
     {
@@ -24,6 +27,8 @@ public class PlayerDetectState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        
+        isPlayerDetected = entity.EnemyDetect();
     }
 
 }

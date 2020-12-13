@@ -9,14 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50f2a7509454ac4c9d5da339824af35, type: 3}
-  m_Name: E1_BaseData
+  m_Script: {fileID: 11500000, guid: 0e9ef31d6f5bee24d8e4cc4772f5a277, type: 3}
+  m_Name: E2_moveStateData
   m_EditorClassIdentifier: 
-  wallCheckDistance: 0.65
-  playerCheckDistance: 3
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
+  movementSpeed: 3
