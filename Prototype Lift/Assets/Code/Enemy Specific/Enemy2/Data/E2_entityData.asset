@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: E2_entityData
   m_EditorClassIdentifier: 
   wallCheckDistance: 0.2
-  playerCheckDistance: 3
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  playerCheckDistance: 10
+  target: {fileID: 0}

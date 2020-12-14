@@ -15,7 +15,10 @@ public class Entity : MonoBehaviour
     private Transform wallCheck;
     [SerializeField]
     private Transform playerCheck;
+    [SerializeField]
+    public Transform target;
     private Vector2 velocityWorkspace;
+    private bool facingRight;
 
     public virtual void Start(){
         facingDirection = 1;
@@ -47,6 +50,18 @@ public class Entity : MonoBehaviour
     public virtual bool EnemyDetect(){
         return Physics2D.OverlapCircle(playerCheck.position, entityData.playerCheckDistance, entityData.whatIsPlayer);
     }
+
+    public virtual void moveTowardsPlayer(float velocity){
+        transform.position = Vector2.MoveTowards(transform.position, target.position, velocity * Time.deltaTime);
+              
+        if(target.position.x > transform.position.x){
+            transform.localScale = new Vector3(1,1,1);
+        }
+        else if(target.position.x < transform.position.x){
+            transform.localScale = new Vector3(-1,1,1);
+        }
+    }
+
 
     public virtual void flip(){
         facingDirection *= -1;

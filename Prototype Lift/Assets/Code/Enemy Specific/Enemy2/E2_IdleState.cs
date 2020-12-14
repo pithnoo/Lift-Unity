@@ -11,6 +11,7 @@ public class E2_IdleState : IdleState
     }
     public override void Enter()
     {
+        //entity.SetVelocity(0f);
         base.Enter();
     }
     public override void Exit()
