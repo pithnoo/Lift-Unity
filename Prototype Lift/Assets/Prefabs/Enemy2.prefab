@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8666598792525150112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 8666598793703180578}
@@ -85,7 +85,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8666598792729458411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1747413, y: -0.5867625, z: -3.4543853}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8666598793703180578}
@@ -107,8 +107,8 @@ MonoBehaviour:
   entityData: {fileID: 11400000, guid: 33db233075e547c41a3070023e4f2d34, type: 2}
   wallCheck: {fileID: 8666598792525150113}
   playerCheck: {fileID: 1682669559272505758}
+  target: {fileID: 0}
   idleStateData: {fileID: 11400000, guid: 5c57edf7ed2e6124a90ce7fc579c61c2, type: 2}
-  moveStateData: {fileID: 11400000, guid: 4e9d259febae04342af8ad8e53275672, type: 2}
   playerDetectedData: {fileID: 11400000, guid: c888b6c17bc0b2941b9e2d08036950f6, type: 2}
 --- !u!1 &8666598793703180576
 GameObject:
@@ -137,8 +137,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8666598793703180576}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.67, y: -1.4132376, z: 3.4543853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 8666598792525150113}
