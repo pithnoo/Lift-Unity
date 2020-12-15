@@ -9,8 +9,9 @@ public class Crosshair : MonoBehaviour
     public GameObject weapon;
     public GameObject bulletPrefab;
     public GameObject firePoint;
-    public Vector3 difference;
 
+    public GameObject player;
+    public Vector3 difference;
     public float bulletSpeed;
     public float rotationZ;
 
@@ -33,6 +34,16 @@ public class Crosshair : MonoBehaviour
             direction.Normalize();
 
             fireBullet(direction, rotationZ);
+        }
+
+        if(target.x > player.transform.position.x){
+            weapon.transform.localScale = new Vector3(1,1,1);
+            player.transform.localScale = new Vector3(2,2,1);       
+        }
+        else if(target.x < player.transform.position.x){
+            weapon.transform.localScale = new Vector3(-1,-1,1);
+            player.transform.localScale = new Vector3(-2,2,1);
+            
         }
     }
 

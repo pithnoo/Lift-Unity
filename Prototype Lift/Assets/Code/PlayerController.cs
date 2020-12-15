@@ -20,11 +20,13 @@ public class PlayerController : MonoBehaviour
     [Space]
     public Animator animator;
     private Vector2 movement;
+    public Crosshair crosshair;
 
 
     void Start(){
         myRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        crosshair = FindObjectOfType<Crosshair>();
     }
 
     // Update is called once per frame
