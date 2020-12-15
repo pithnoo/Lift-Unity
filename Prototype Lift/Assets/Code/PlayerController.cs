@@ -17,10 +17,14 @@ public class PlayerController : MonoBehaviour
     public bool isDashing;
     public int dashCounter = 3;
     private bool isRecharging;
+    [Space]
+    public Animator animator;
+    private Vector2 movement;
 
 
     void Start(){
         myRigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +39,10 @@ public class PlayerController : MonoBehaviour
 
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
+        
+        movement = new Vector2(xRaw,yRaw);
+
+        animator.SetFloat("Speed", movement.sqrMagnitude);
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
