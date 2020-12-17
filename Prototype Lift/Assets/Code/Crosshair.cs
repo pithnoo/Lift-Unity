@@ -38,12 +38,11 @@ public class Crosshair : MonoBehaviour
 
         if(target.x > player.transform.position.x){
             weapon.transform.localScale = new Vector3(1,1,1);
-            player.transform.localScale = new Vector3(2,2,1);       
+            player.transform.localScale = new Vector3(2,2,1);   
         }
         else if(target.x < player.transform.position.x){
             weapon.transform.localScale = new Vector3(-1,-1,1);
-            player.transform.localScale = new Vector3(-2,2,1);
-            
+            player.transform.localScale = new Vector3(-2,2,1);   
         }
     }
 
