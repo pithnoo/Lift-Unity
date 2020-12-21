@@ -7,18 +7,21 @@ public class Crosshair : MonoBehaviour
     private Vector3 target;
     public GameObject crosshair;
     public GameObject weapon;
-    public GameObject bulletPrefab;
-    public GameObject firePoint;
+
+    //public GameObject bulletPrefab;
+    //public GameObject firePoint;
 
     public GameObject player;
     public Vector3 difference;
     public float bulletSpeed;
     public float rotationZ;
+    public Gun gun;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        gun = FindObjectOfType<Gun>();
         Cursor.visible = false;
     }
 
@@ -33,7 +36,7 @@ public class Crosshair : MonoBehaviour
             Vector2 direction = difference / distance;
             direction.Normalize();
 
-            fireBullet(direction, rotationZ);
+            gun.fireBullet(direction, rotationZ);
         }
 
         if(target.x > player.transform.position.x){
@@ -50,16 +53,5 @@ public class Crosshair : MonoBehaviour
         crosshair.transform.position = new Vector2(target.x, target.y);
         rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-    }
-
-    void fireBullet(Vector2 direction, float rotationZ){
-        GameObject b = Instantiate(bulletPrefab) as GameObject;
-
-        b.transform.position = firePoint.transform.position;
-        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-
-        b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
-
-        CinemachineShake.Instance.ShakeCamera(.5f, .1f);
     }
 }

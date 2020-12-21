@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 329272216786053381}
   - component: {fileID: 329272216786053377}
   - component: {fileID: 329272216786053376}
+  - component: {fileID: -1858685532171709011}
   m_Layer: 0
   m_Name: collision1
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3562347083494961242, guid: 3dfff18aa2a67f749b9a19e63b42b31a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4935,3 +4936,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-1858685532171709011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329272216786053380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67af523150646cc4aa890a7ca6186c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.5
