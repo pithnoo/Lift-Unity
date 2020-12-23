@@ -6,4 +6,6 @@ using UnityEngine;
 public class D_PlayerDetected : ScriptableObject
 {
     public float followSpeed = 4f;
+    public GameObject forceField;
+    public float forceFieldHealth = 2f;
 }

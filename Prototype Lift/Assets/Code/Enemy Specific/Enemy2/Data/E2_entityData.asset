@@ -19,5 +19,5 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  playerCheckDistance: 10
+  playerCheckDistance: 30
   target: {fileID: 0}
