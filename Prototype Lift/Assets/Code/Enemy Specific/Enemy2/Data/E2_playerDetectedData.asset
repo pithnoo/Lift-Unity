@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6185ff6a31b5f304e972c830ec1996f0, type: 3}
   m_Name: E2_playerDetectedData
   m_EditorClassIdentifier: 
-  followSpeed: 10
+  followSpeed: 15
+  forceField: {fileID: 0}
+  forceFieldHealth: 2

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Gun : MonoBehaviour
 {
+    public CinemachineImpulseSource source;
     public float bulletSpeed;
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -15,6 +17,7 @@ public class Gun : MonoBehaviour
 
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 
-        CinemachineShake.Instance.ShakeCamera(.5f, .1f);
+        source.GenerateImpulse();
+        //CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
     }
 }
