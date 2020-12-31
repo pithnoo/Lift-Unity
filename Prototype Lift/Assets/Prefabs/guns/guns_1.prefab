@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6587254749255284720}
   - component: {fileID: 6587254749255284721}
   - component: {fileID: 4393804055278919875}
+  - component: {fileID: 2593796875992530333}
   m_Layer: 0
   m_Name: guns_1
   m_TagString: Untagged
@@ -103,6 +104,26 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5132967983490114205, guid: 52092572eca288740942bf3fea55affa,
     type: 3}
   fireRate: 1
+  animator: {fileID: 0}
+--- !u!95 &2593796875992530333
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587254749255284726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8542afe947ba8e42a04dea63b1e9782, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7658658988059730547
 GameObject:
   m_ObjectHideFlags: 0

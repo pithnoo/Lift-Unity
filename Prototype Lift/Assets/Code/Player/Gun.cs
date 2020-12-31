@@ -11,6 +11,12 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     public float fireRate = 15f;
     private float nextTimeToFire = 0f;
+    public Animator animator;
+
+    void Start() {
+        animator = GetComponent<Animator>();
+    }
+
     public void fireBullet(Vector2 direction, float rotationZ){
         if (Time.time >= nextTimeToFire)
         {
@@ -23,6 +29,7 @@ public class Gun : MonoBehaviour
             b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 
             source.GenerateImpulse();
+            animator.SetTrigger("Shoot");
             //CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
         }
         
