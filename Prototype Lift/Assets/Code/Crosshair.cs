@@ -31,7 +31,7 @@ public class Crosshair : MonoBehaviour
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));      
         difference = target - weapon.transform.position;   
 
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButton(0)){
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
             direction.Normalize();
