@@ -120,7 +120,7 @@ MonoBehaviour:
     m_ImpulseChannel: 1
     m_RawSignal: {fileID: 11400000, guid: c939e608e4cb5874291ad57bdfc6c861, type: 2}
     m_AmplitudeGain: 0.02
-    m_FrequencyGain: 10
+    m_FrequencyGain: 15
     m_RepeatMode: 0
     m_Randomize: 0
     m_TimeEnvelope:

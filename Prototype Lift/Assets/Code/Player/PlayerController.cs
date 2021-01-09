@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,8 +22,10 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private Vector2 movement;
     public Crosshair crosshair;
-    public GameObject dashTrail;
-
+    [Space]
+    public ParticleSystem dashParticle;
+    public CinemachineImpulseSource source;
+    
     void Start(){
         myRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -77,13 +80,21 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
-        dashTrail.SetActive(true);
+        animator.SetBool("isDashing",true);
+        source.GenerateImpulse();
+        dashParticle.Play();
+
         isDashing = false;
+
         moveSpeed = dashSpeed;
         yield return new WaitForSeconds(dashTime);
         moveSpeed = 7f;
         yield return new WaitForSeconds(dashPause);
+
         isDashing = true;
+        animator.SetBool("isDashing",false);
+
+        dashParticle.Stop();
     }
 
     IEnumerator Recharge()
