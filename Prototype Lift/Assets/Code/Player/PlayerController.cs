@@ -99,10 +99,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Recharge()
     {
-        Debug.Log("recharge activated");
+        //Debug.Log("recharge activated");
         isRecharging = true;
-        yield return new WaitForSeconds(2);
-        dashCounter = 3;
+        yield return new WaitForSeconds(1);
+        dashCounter = 1;
         isRecharging = false;
     }
 }
