@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private Vector2 movement;
     public Crosshair crosshair;
-
+    public GameObject dashTrail;
 
     void Start(){
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
+        dashTrail.SetActive(true);
         isDashing = false;
         moveSpeed = dashSpeed;
         yield return new WaitForSeconds(dashTime);

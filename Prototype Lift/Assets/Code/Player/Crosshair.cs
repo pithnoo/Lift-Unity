@@ -17,6 +17,8 @@ public class Crosshair : MonoBehaviour
     public float rotationZ;
     public Gun gun;
 
+    public bool isRotated = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +42,12 @@ public class Crosshair : MonoBehaviour
         }
 
         if(target.x > player.transform.position.x){
+            isRotated = true;
             weapon.transform.localScale = new Vector3(1,1,1);
             player.transform.localScale = new Vector3(2,2,1);   
         }
         else if(target.x < player.transform.position.x){
+            isRotated = false;
             weapon.transform.localScale = new Vector3(-1,-1,1);
             player.transform.localScale = new Vector3(-2,2,1);   
         }
