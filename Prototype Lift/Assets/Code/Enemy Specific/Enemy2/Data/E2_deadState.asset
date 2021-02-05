@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathExplosion: {fileID: 3739810370411912797, guid: f1fa8452f8d50ae4a9278b626a993d39,
     type: 3}
+  source: {fileID: 7493631018571437079, guid: 6ec2716bdf1b08246a9417f52a3478ca, type: 3}

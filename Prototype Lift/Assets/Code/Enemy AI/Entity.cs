@@ -34,6 +34,8 @@ public class Entity : MonoBehaviour
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
 
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         stateMachine = new FiniteStateMachine();
     }
 
@@ -60,7 +62,6 @@ public class Entity : MonoBehaviour
 
     public virtual void moveTowardsPlayer(float velocity){
         transform.position = Vector2.MoveTowards(transform.position, target.position, velocity * Time.deltaTime);
-              
     }
 
     public virtual void lookTowardsPlayer(){
@@ -83,9 +84,6 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public virtual void forceFieldBroken(){
-        invincible = false;
-    }
 
     public virtual void enemyDestroyed(){
         Destroy(gameObject);

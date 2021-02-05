@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class Gun : MonoBehaviour
 {
-    public CinemachineImpulseSource source;
+    //public CinemachineImpulseSource source;
     public float bulletSpeed;
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour
 
             b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 
-            source.GenerateImpulse();
+            //source.GenerateImpulse();
             animator.SetTrigger("Shoot");
             //CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
         }

@@ -22,8 +22,8 @@ public class E2_PlayerDetectedState : PlayerDetectState
             //transition to forcefield state
             stateMachine.ChangeState(enemy.forceFieldState);
 
-            //entity.invincible = true;
-            
+            entity.invincible = true;
+
             forceFieldActivated = true;
             //Debug.Log("forcefield activated");
         }

@@ -15,9 +15,9 @@ public class ForceFieldState : State
     public override void Enter()
     {
         base.Enter();
-        GameObject enemyField = GameObject.Instantiate(stateData.forceField, entity.aliveGO.transform.position, entity.aliveGO.transform.rotation);
+        GameObject enemyField = GameObject.Instantiate(stateData.forceField, entity.transform.position, entity.transform.rotation);
         
-        enemyField.transform.parent = entity.aliveGO.transform;
+        enemyField.transform.parent = entity.transform;
 
         forceFieldSpawned = true;
 

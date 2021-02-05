@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class DeadState : State
 {
@@ -15,6 +16,7 @@ public class DeadState : State
         base.Enter();
         
         GameObject.Instantiate(stateData.deathExplosion, entity.aliveGO.transform.position, entity.aliveGO.transform.rotation);
+        stateData.shake();
         //entity.gameObject.SetActive(false);
         entity.enemyDestroyed();
     }

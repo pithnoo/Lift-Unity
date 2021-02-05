@@ -38,4 +38,9 @@ public class Enemy2 : Entity
             stateMachine.ChangeState(deadState);
         }
     }
+
+    public virtual void forceFieldBroken(){
+        invincible = false;
+        Debug.Log("broken");
+    }
 }

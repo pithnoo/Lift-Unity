@@ -9,11 +9,15 @@ public class Bullet : MonoBehaviour
     private AttackDetails attackDetails;
     void OnTriggerEnter2D(Collider2D collision){
 
-        if(collision.tag == "Enemy"){
+        if(collision.tag == "Target"){
+            Target target = collision.transform.GetComponent<Target>();
+            target.TakeDamage(damage);
+        }
+        else if(collision.tag == "Enemy"){
             attackDetails.damageAmount = damage;
             collision.transform.parent.SendMessage("damage", attackDetails);
         }
-
+        
         Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
