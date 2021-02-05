@@ -121,12 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 4578819659755749727, guid: 1ff5837a691e5b246babff2855c2d07d,
     type: 3}
-  spriteRenderer: {fileID: 0}
-  flashFrames: 3
-  bulletSprite: {fileID: -3617592842788458299, guid: 12dda10427e368e4ba3c3043a5a40eb2,
-    type: 3}
-  muzzleSprite: {fileID: 5037496975944284669, guid: 12dda10427e368e4ba3c3043a5a40eb2,
-    type: 3}
+  damage: 25
 --- !u!50 &-6137839840004953522
 Rigidbody2D:
   serializedVersion: 4

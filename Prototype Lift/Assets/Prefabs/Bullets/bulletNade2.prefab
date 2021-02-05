@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 657702622954739935}
   - component: {fileID: 657702622954739932}
   - component: {fileID: 657702622954739933}
+  - component: {fileID: 5356783102531164416}
+  - component: {fileID: -3438787391476376741}
   m_Layer: 0
   m_Name: bulletNade2
   m_TagString: Untagged
@@ -103,3 +105,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5356783102531164416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657702622954739930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67af523150646cc4aa890a7ca6186c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1
+--- !u!114 &-3438787391476376741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657702622954739930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69174ec815cc9fc46985abc0131607b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 6663403170928858624, guid: b41f67d329f8d114eb656c2b7d0a687b,
+    type: 3}

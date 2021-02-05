@@ -18,12 +18,19 @@ public class Entity : MonoBehaviour
     [SerializeField]
     public Transform target;
     private Vector2 velocityWorkspace;
-    private bool facingRight;
+    public float currentHealth;
+    protected bool isDead;
+    public bool invincible;
+    public Color hurtColour;
+    public SpriteRenderer spriteRenderer;
 
     public virtual void Start(){
+        currentHealth = entityData.maxHealth;
         facingDirection = 1;
+        invincible = false;
 
         aliveGO = transform.Find("Alive").gameObject;
+        spriteRenderer = aliveGO.GetComponent<SpriteRenderer>();
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
 
@@ -54,6 +61,9 @@ public class Entity : MonoBehaviour
     public virtual void moveTowardsPlayer(float velocity){
         transform.position = Vector2.MoveTowards(transform.position, target.position, velocity * Time.deltaTime);
               
+    }
+
+    public virtual void lookTowardsPlayer(){
         if(target.position.x > transform.position.x){
             transform.localScale = new Vector3(1,1,1);
         }
@@ -62,6 +72,24 @@ public class Entity : MonoBehaviour
         }
     }
 
+    public virtual void damage(AttackDetails attackDetails){
+        if(!invincible){
+            StartCoroutine("hitFlash");
+            currentHealth -= attackDetails.damageAmount;
+            if (currentHealth <= 0)
+            {
+                isDead = true;
+            }
+        }
+    }
+
+    public virtual void forceFieldBroken(){
+        invincible = false;
+    }
+
+    public virtual void enemyDestroyed(){
+        Destroy(gameObject);
+    }
 
     public virtual void flip(){
         facingDirection *= -1;
@@ -70,5 +98,11 @@ public class Entity : MonoBehaviour
 
     public virtual void OnDrawGizmos() {
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.wallCheckDistance));
+    }
+
+    public IEnumerator hitFlash(){
+        spriteRenderer.color = hurtColour;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
     }
 }

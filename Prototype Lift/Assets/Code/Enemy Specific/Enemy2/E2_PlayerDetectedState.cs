@@ -5,7 +5,7 @@ using UnityEngine;
 public class E2_PlayerDetectedState : PlayerDetectState
 {
     private Enemy2 enemy;
-    protected float followSpeed;
+    private bool forceFieldActivated = false;
     public E2_PlayerDetectedState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData, Enemy2 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
@@ -15,7 +15,18 @@ public class E2_PlayerDetectedState : PlayerDetectState
     {
         //entity.SetVelocity(0f);
         base.Enter();
-        entity.moveTowardsPlayer(followSpeed);
+        entity.lookTowardsPlayer();
+        //entity.moveTowardsPlayer(stateData.followSpeed);
+
+        if(!forceFieldActivated){
+            //transition to forcefield state
+            stateMachine.ChangeState(enemy.forceFieldState);
+
+            //entity.invincible = true;
+            
+            forceFieldActivated = true;
+            //Debug.Log("forcefield activated");
+        }
     }
     public override void Exit()
     {
@@ -33,6 +44,7 @@ public class E2_PlayerDetectedState : PlayerDetectState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        entity.moveTowardsPlayer(4f);
+        entity.lookTowardsPlayer();
+        entity.moveTowardsPlayer(stateData.followSpeed);
     }
 }
