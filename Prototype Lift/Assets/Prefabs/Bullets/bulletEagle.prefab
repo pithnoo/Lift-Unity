@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5650686833882943051}
   - component: {fileID: -3716764269341992949}
   - component: {fileID: -477963751906278806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bulletEagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
