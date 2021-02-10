@@ -8,13 +8,13 @@ public class BulletBomb : MonoBehaviour
     [Header("Projectile Properties")]
     public int numberOfProjectiles;
     public GameObject projectile;
-    public float bulletTime;
     private float moveSpeed;
     public GameObject bulletExplosion;
+    public GameObject nadeExplosion;
     private float radius;
     private Vector2 startPoint;
-
-
+    public float damage;
+    private AttackDetails attackDetails;
 
     // Start is called before the first frame update
     void Start()
@@ -22,23 +22,17 @@ public class BulletBomb : MonoBehaviour
         radius = 100f;
         moveSpeed = 50f;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        bulletTime -= Time.deltaTime;
-
-        if(bulletTime <= 0f){
-            explode();
-            Destroy(gameObject);
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Enemy"){
+        if(other.tag != "Enemy"){
             explode();
-            Destroy(gameObject);
-        }
+            Instantiate(bulletExplosion, transform.position, transform.rotation); 
+        }      
+        else{
+            attackDetails.damageAmount = damage;
+            other.transform.parent.SendMessage("damage", attackDetails);
+            Instantiate(nadeExplosion, transform.position, transform.rotation); 
+        }  
+        Destroy(gameObject);
     }
 
     public void explode(){

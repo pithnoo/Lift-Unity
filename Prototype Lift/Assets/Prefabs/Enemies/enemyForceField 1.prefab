@@ -115,5 +115,5 @@ MonoBehaviour:
   maxHealth: 30
   objectHealth: 0
   damageColour: {r: 0.87843144, g: 0.48235297, b: 0, a: 1}
-  deathParticle: {fileID: 3739810370411912797, guid: f1fa8452f8d50ae4a9278b626a993d39,
+  deathParticle: {fileID: 5252364761722087561, guid: 00fc1116189b0e645868e8a394b0f930,
     type: 3}

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5132967983490114205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.9146514, y: 5.122164, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -165,9 +165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c750db496e0b154394e0bc512af259c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfProjectiles: 3
+  numberOfProjectiles: 8
   projectile: {fileID: 657702622954739930, guid: afcfeb32cd3270e409429a6351ae4172,
     type: 3}
-  bulletTime: 3
   bulletExplosion: {fileID: 6663403170928858624, guid: b41f67d329f8d114eb656c2b7d0a687b,
     type: 3}
+  nadeExplosion: {fileID: 8801937375971197960, guid: 76a688e57f1150d41bcb5865b9a09177,
+    type: 3}
+  damage: 20

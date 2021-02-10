@@ -22,9 +22,10 @@ public class Target : MonoBehaviour
         objectHealth -= damage;
 
         if(objectHealth <= 0){
+            Destroy(gameObject);
             transform.parent.SendMessage("forceFieldBroken");
             Instantiate(deathParticle, transform.position, transform.rotation);
-            Destroy(gameObject);
+            
         }
     }
 
