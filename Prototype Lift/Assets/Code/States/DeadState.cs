@@ -17,8 +17,8 @@ public class DeadState : State
         
         GameObject.Instantiate(stateData.deathExplosion, entity.aliveGO.transform.position, entity.aliveGO.transform.rotation);
         stateData.shake();
-        //entity.gameObject.SetActive(false);
-        entity.enemyDestroyed();
+        entity.gameObject.SetActive(false);
+        //entity.enemyDestroyed();
     }
 
     public override void Exit()

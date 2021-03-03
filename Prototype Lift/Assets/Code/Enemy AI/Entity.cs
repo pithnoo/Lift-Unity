@@ -23,11 +23,14 @@ public class Entity : MonoBehaviour
     public bool invincible;
     public Color hurtColour;
     public SpriteRenderer spriteRenderer;
-
+    public GameObject[] AI;
+    public float SpaceBetween;
     public virtual void Start(){
         currentHealth = entityData.maxHealth;
         facingDirection = 1;
         invincible = false;
+
+        AI = GameObject.FindGameObjectsWithTag("Enemy");
 
         aliveGO = transform.Find("Alive").gameObject;
         spriteRenderer = aliveGO.GetComponent<SpriteRenderer>();
@@ -61,6 +64,16 @@ public class Entity : MonoBehaviour
     }
 
     public virtual void moveTowardsPlayer(float velocity){
+
+        foreach(GameObject go in AI){
+            float distance = Vector3.Distance(go.transform.position, aliveGO.transform.position);
+
+            if(distance <= SpaceBetween){
+                Vector3 direction = aliveGO.transform.position - go.transform.position;
+                transform.Translate(direction * Time.deltaTime);
+            }
+        }
+
         transform.position = Vector2.MoveTowards(transform.position, target.position, velocity * Time.deltaTime);
     }
 

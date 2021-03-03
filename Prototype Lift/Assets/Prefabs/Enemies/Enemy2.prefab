@@ -112,6 +112,8 @@ MonoBehaviour:
   invincible: 0
   hurtColour: {r: 0, g: 0, b: 0, a: 0}
   spriteRenderer: {fileID: 0}
+  AI: []
+  SpaceBetween: 1.4
   idleStateData: {fileID: 11400000, guid: 5c57edf7ed2e6124a90ce7fc579c61c2, type: 2}
   playerDetectedData: {fileID: 11400000, guid: c888b6c17bc0b2941b9e2d08036950f6, type: 2}
   deadStateData: {fileID: 11400000, guid: c00db8c46ae5393418db1311812db4a2, type: 2}
@@ -238,7 +240,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1000
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 15a48f98bcab797428d3392745d56f9a, type: 2}
   m_Interpolate: 0

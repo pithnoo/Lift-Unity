@@ -13,7 +13,6 @@ public class PlayerDetectState : State
     public override void Enter()
     {
         base.Enter();
-
         isPlayerDetected = entity.EnemyDetect();
     }
     public override void Exit()
@@ -29,6 +28,7 @@ public class PlayerDetectState : State
         base.PhysicsUpdate();
         
         isPlayerDetected = entity.EnemyDetect();
+
     }
 
 }
