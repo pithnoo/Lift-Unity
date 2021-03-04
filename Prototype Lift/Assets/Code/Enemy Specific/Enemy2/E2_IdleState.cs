@@ -24,7 +24,6 @@ public class E2_IdleState : IdleState
         
         if(isPlayerDetected){
             stateMachine.ChangeState(enemy.playerDetectedState);
-            Debug.Log("detected");
         }
     }
     public override void PhysicsUpdate()

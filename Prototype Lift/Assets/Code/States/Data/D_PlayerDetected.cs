@@ -6,4 +6,6 @@ using UnityEngine;
 public class D_PlayerDetected : ScriptableObject
 {
     public float followSpeed = 4f;
+    public float minPauseTime = 0f;
+    public float maxPauseTime = 0f;
 }

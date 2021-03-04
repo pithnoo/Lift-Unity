@@ -11,4 +11,5 @@ public class D_Entity : ScriptableObject
     public LayerMask whatIsPlayer;
     public float playerCheckDistance = 3f;
     public Transform target;
+    public float playerAttackDistance = 2f;
 }

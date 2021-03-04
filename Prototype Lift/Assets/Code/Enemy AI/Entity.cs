@@ -10,6 +10,9 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
     public GameObject aliveGO { get; private set; }
+    public AnimationToStateMachine atsm { get; private set; }
+    [SerializeField]
+    private Transform playerInRange;
 
     [SerializeField]
     private Transform wallCheck;
@@ -36,6 +39,7 @@ public class Entity : MonoBehaviour
         spriteRenderer = aliveGO.GetComponent<SpriteRenderer>();
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
+        atsm = aliveGO.GetComponent<AnimationToStateMachine>();
 
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
@@ -61,6 +65,10 @@ public class Entity : MonoBehaviour
 
     public virtual bool EnemyDetect(){
         return Physics2D.OverlapCircle(playerCheck.position, entityData.playerCheckDistance, entityData.whatIsPlayer);
+    }
+
+    public virtual bool IsPlayerInRange(){
+        return Physics2D.OverlapCircle(playerInRange.position, entityData.playerAttackDistance, entityData.whatIsPlayer);
     }
 
     public virtual void moveTowardsPlayer(float velocity){

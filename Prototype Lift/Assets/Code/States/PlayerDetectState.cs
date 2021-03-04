@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDetectState : State
 {
     protected D_PlayerDetected stateData;
+    protected float pauseTime;
     protected bool isPlayerDetected;
     public PlayerDetectState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(entity, stateMachine, animBoolName)
     {
@@ -14,6 +15,7 @@ public class PlayerDetectState : State
     {
         base.Enter();
         isPlayerDetected = entity.EnemyDetect();
+        SetRandomPauseTime();
     }
     public override void Exit()
     {
@@ -29,6 +31,10 @@ public class PlayerDetectState : State
         
         isPlayerDetected = entity.EnemyDetect();
 
+    }
+
+    private void SetRandomPauseTime(){
+        pauseTime = Random.Range(stateData.minPauseTime, stateData.maxPauseTime);
     }
 
 }

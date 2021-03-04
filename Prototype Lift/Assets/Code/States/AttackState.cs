@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    public AttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName) : base(entity, stateMachine, animBoolName)
+    protected Transform attackPosition;
+    protected bool isAnimationFinished;
+    protected bool isPlayerInRange;
+
+    public AttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition) : base(entity, stateMachine, animBoolName)
     {
-        
+        this.attackPosition = attackPosition;
     }
+
     public override void Enter()
     {
         base.Enter();
+
+        isPlayerInRange = entity.IsPlayerInRange();
+
+        entity.atsm.attackState = this;
+        isAnimationFinished = false;
+        entity.SetVelocity(0f);
     }
     public override void Exit()
     {
@@ -24,5 +35,13 @@ public class AttackState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    public virtual void TriggerAttack(){
+
+    }
+
+    public virtual void FinishAttack(){
+        isAnimationFinished = true;
     }
 }
