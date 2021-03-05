@@ -25,11 +25,25 @@ public class PlayerController : MonoBehaviour
     [Space]
     public ParticleSystem dashParticle;
     public CinemachineImpulseSource source;
+    public CinemachineImpulseSource damageSource;
+    public float maxHealth = 100f;
+    public float currentHealth;
+    public HealthBar healthBar;
+    public GameObject playerDeathParticle;
+    public bool invincible;
+    public Color hurtColour;
+    public SpriteRenderer spriteRenderer;
     
     void Start(){
+        healthBar = FindObjectOfType<HealthBar>();
         myRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         crosshair = FindObjectOfType<Crosshair>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        invincible = false;
     }
 
     // Update is called once per frame
@@ -80,6 +94,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
+        invincible = true;
+
         animator.SetBool("isDashing",true);
         source.GenerateImpulse();
         dashParticle.Play();
@@ -95,6 +111,8 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isDashing",false);
 
         dashParticle.Stop();
+
+        invincible = false;
     }
 
     IEnumerator Recharge()
@@ -104,5 +122,35 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1);
         dashCounter = 1;
         isRecharging = false;
+    }
+
+    IEnumerator InvincibleTimer(){
+        invincible = true;
+        yield return new WaitForSeconds(0.05f);
+        invincible = false;
+    }
+
+    public void damage(AttackDetails attackDetails){
+        if(!invincible){
+            damageSource.GenerateImpulse();
+            StartCoroutine("hitFlash");
+            currentHealth -= attackDetails.damageAmount;
+            healthBar.SetHealth(currentHealth);
+
+            StartCoroutine("InvincibleTimer");
+
+            if (currentHealth <= 0)
+            {
+                source.GenerateImpulse();
+                Instantiate(playerDeathParticle, transform.position, transform.rotation);
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    IEnumerator hitFlash(){
+        spriteRenderer.color = hurtColour;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
     }
 }
