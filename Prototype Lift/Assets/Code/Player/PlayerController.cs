@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
             {
                 source.GenerateImpulse();
                 Instantiate(playerDeathParticle, transform.position, transform.rotation);
+                crosshair.isGameOver = true;
                 gameObject.SetActive(false);
             }
         }

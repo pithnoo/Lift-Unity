@@ -7,6 +7,7 @@ public class PlayerDetectState : State
     protected D_PlayerDetected stateData;
     protected float pauseTime;
     protected bool isPlayerDetected;
+    protected bool isPlayerInRange;
     public PlayerDetectState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -15,6 +16,7 @@ public class PlayerDetectState : State
     {
         base.Enter();
         isPlayerDetected = entity.EnemyDetect();
+        isPlayerInRange = entity.IsPlayerInRange();
         SetRandomPauseTime();
     }
     public override void Exit()

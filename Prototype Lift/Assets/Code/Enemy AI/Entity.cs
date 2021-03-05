@@ -13,7 +13,6 @@ public class Entity : MonoBehaviour
     public AnimationToStateMachine atsm { get; private set; }
     [SerializeField]
     private Transform playerInRange;
-
     [SerializeField]
     private Transform wallCheck;
     [SerializeField]

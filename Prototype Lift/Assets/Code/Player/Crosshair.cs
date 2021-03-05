@@ -18,6 +18,7 @@ public class Crosshair : MonoBehaviour
     public Gun gun;
 
     public bool isRotated = true;
+    public bool isGameOver = false;
 
 
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class Crosshair : MonoBehaviour
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));      
         difference = target - weapon.transform.position;   
 
-        if(Input.GetMouseButton(0)){
+        if(Input.GetMouseButton(0) && !isGameOver){
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
             direction.Normalize();
