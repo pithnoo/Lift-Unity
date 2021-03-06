@@ -117,3 +117,5 @@ MonoBehaviour:
   damageColour: {r: 0.87843144, g: 0.48235297, b: 0, a: 1}
   deathParticle: {fileID: 5252364761722087561, guid: 00fc1116189b0e645868e8a394b0f930,
     type: 3}
+  collisionDamage: 10
+  playerController: {fileID: 0}

@@ -38,7 +38,6 @@ public class E2_PlayerDetectedState : PlayerDetectState
 
         if(!isPlayerDetected){
             stateMachine.ChangeState(enemy.idleState);
-            Debug.Log("not detected");
         }
     }
     public override void PhysicsUpdate()

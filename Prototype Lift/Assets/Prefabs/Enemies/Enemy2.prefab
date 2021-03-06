@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 8666598793703180589}
   - component: {fileID: 8666598793703180588}
   - component: {fileID: 8666598793703180579}
+  - component: {fileID: 8987364146774405046}
   m_Layer: 0
   m_Name: Alive
   m_TagString: Enemy
@@ -305,3 +306,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21111336, y: 0.1562146}
   m_EdgeRadius: 0
+--- !u!114 &8987364146774405046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666598793703180576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe87937526741248a59a8bef89ddeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionDamage: 20
+  deathParticle: {fileID: 3739810370411912797, guid: f1fa8452f8d50ae4a9278b626a993d39,
+    type: 3}

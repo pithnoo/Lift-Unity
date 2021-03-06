@@ -9,12 +9,16 @@ public class Target : MonoBehaviour
     public Color damageColour;
     private SpriteRenderer spriteRenderer;
     public GameObject deathParticle;
+    public float collisionDamage;
+    public PlayerController playerController;
+    private AttackDetails attackDetails;
 
     // Start is called before the first frame update
     void Start()
     {
         objectHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void TakeDamage(float damage){
@@ -25,7 +29,6 @@ public class Target : MonoBehaviour
             Destroy(gameObject);
             transform.parent.SendMessage("forceFieldBroken");
             Instantiate(deathParticle, transform.position, transform.rotation);
-            
         }
     }
 
@@ -33,5 +36,16 @@ public class Target : MonoBehaviour
         spriteRenderer.color = damageColour;
         yield return new WaitForSeconds(0.05f);
         spriteRenderer.color = Color.white;
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Player" && !playerController.invincible){
+
+            attackDetails.damageAmount = collisionDamage;
+
+            other.transform.SendMessage("damage", attackDetails);
+            Instantiate(deathParticle, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

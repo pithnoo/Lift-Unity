@@ -20,5 +20,6 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  playerCheckDistance: 20
+  playerCheckDistance: 100
   target: {fileID: 0}
+  playerAttackDistance: 2
