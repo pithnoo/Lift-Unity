@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DashBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Slider slider;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SetMaxCharge(float charge){
+        slider.maxValue = charge;
+        slider.value = charge;
+    }
+    public void SetCharge(float charge){
+        slider.value = charge;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
     public HealthBar healthBar;
+    public DashBar dashBar;
+    public float maxCharge = 1;
+    public float currentCharge;
     public GameObject playerDeathParticle;
     public bool invincible;
     public Color hurtColour;
@@ -36,13 +39,16 @@ public class PlayerController : MonoBehaviour
     
     void Start(){
         healthBar = FindObjectOfType<HealthBar>();
+        dashBar = FindObjectOfType<DashBar>();
         myRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         crosshair = FindObjectOfType<Crosshair>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         currentHealth = maxHealth;
+        currentCharge = maxCharge;
         healthBar.SetMaxHealth(maxHealth);
+        dashBar.SetCharge(maxCharge);
         invincible = false;
     }
 
@@ -100,6 +106,8 @@ public class PlayerController : MonoBehaviour
         source.GenerateImpulse();
         dashParticle.Play();
 
+        currentCharge = 0;
+        dashBar.SetCharge(currentCharge);
         isDashing = false;
 
         moveSpeed = dashSpeed;
@@ -117,9 +125,17 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Recharge()
     {
-        //Debug.Log("recharge activated");
+        Debug.Log("recharge activated");
         isRecharging = true;
-        yield return new WaitForSeconds(1);
+
+        while(currentCharge < maxCharge){
+            currentCharge += maxCharge / 100;
+            dashBar.SetCharge(currentCharge);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        //yield return new WaitForSeconds(1);
+
         dashCounter = 1;
         isRecharging = false;
     }
@@ -154,4 +170,5 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         spriteRenderer.color = Color.white;
     }
+
 }
