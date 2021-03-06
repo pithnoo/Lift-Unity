@@ -32,7 +32,7 @@ public class PlayerDetectState : State
         base.PhysicsUpdate();
         
         isPlayerDetected = entity.EnemyDetect();
-
+        isPlayerInRange = entity.IsPlayerInRange();
     }
 
     private void SetRandomPauseTime(){

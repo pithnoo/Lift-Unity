@@ -48,6 +48,7 @@ public class ShootAttackState : AttackState
         difference = entity.target.transform.position - projectile.transform.position;
         float distance = difference.magnitude;
         Vector2 direction = difference / distance;
+        Debug.Log("Direction determined");
 
         projectile.GetComponent<Rigidbody2D>().velocity = direction * stateData.moveSpeed;
     }

@@ -9,15 +9,18 @@ public class E4_PlayerDetectedState : PlayerDetectState
     {
         this.enemy = enemy;
     }
+
     public override void Enter()
     {
         base.Enter();
         entity.lookTowardsPlayer();
     }
+
     public override void Exit()
     {
         base.Exit();
     }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -26,14 +29,14 @@ public class E4_PlayerDetectedState : PlayerDetectState
             stateMachine.ChangeState(enemy.idleState);
         }
         else if(isPlayerInRange){
-            //TODO: create shoot state
+            stateMachine.ChangeState(enemy.shootState);
         }
+        
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        
         entity.lookTowardsPlayer();
         entity.moveTowardsPlayer(stateData.followSpeed);
     }

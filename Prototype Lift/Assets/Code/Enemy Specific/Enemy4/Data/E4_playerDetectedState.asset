@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: E4_playerDetectedState
   m_EditorClassIdentifier: 
   followSpeed: 4
-  minPauseTime: 2
-  maxPauseTime: 4
+  minPauseTime: 1
+  maxPauseTime: 3

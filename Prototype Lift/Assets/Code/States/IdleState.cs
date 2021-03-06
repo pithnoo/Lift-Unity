@@ -9,6 +9,7 @@ public class IdleState : State
     protected bool isIdleTimeOver;
     protected float idleTime;
     protected bool isPlayerDetected;
+    protected bool isPlayerInRange;
     public IdleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -20,6 +21,7 @@ public class IdleState : State
         entity.SetVelocity(0f);
         isIdleTimeOver = false;
         isPlayerDetected = entity.EnemyDetect();
+        isPlayerInRange = entity.IsPlayerInRange();
         SetRandomIdleTime();
     }
     public override void Exit()

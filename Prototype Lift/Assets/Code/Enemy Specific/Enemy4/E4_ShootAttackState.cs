@@ -22,7 +22,7 @@ public class E4_ShootAttackState : ShootAttackState
     public override void FinishAttack()
     {
         base.FinishAttack();
-        stateMachine.ChangeState(enemy.idleState);
+        stateMachine.ChangeState(enemy.playerDetectedState);
     }
 
     public override void LogicUpdate()

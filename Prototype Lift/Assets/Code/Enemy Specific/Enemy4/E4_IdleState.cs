@@ -26,11 +26,13 @@ public class E4_IdleState : IdleState
         if(isPlayerDetected){
             stateMachine.ChangeState(enemy.playerDetectedState);
         }
+
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        entity.lookTowardsPlayer();
     }
 
 }

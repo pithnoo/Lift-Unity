@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7fc48cf411b2f4a8d7c0d6b13566ad, type: 3}
   m_Name: E4_shootAttackData
   m_EditorClassIdentifier: 
-  projectile: {fileID: 2208313230574621748, guid: 6133dc2bb423a1a49bd5ee0b640158f7,
+  projectile: {fileID: 4434671140899780906, guid: c179f05958e81844a95f468325672538,
     type: 3}
-  moveSpeed: 10
+  moveSpeed: 20
