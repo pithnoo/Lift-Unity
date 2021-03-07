@@ -36,14 +36,19 @@ public class PlayerController : MonoBehaviour
     public bool invincible;
     public Color hurtColour;
     public SpriteRenderer spriteRenderer;
+    public LevelManager levelManager;
     
     void Start(){
         healthBar = FindObjectOfType<HealthBar>();
         dashBar = FindObjectOfType<DashBar>();
+
         myRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
         crosshair = FindObjectOfType<Crosshair>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        levelManager = FindObjectOfType<LevelManager>();
 
         currentHealth = maxHealth;
         currentCharge = maxCharge;
@@ -160,6 +165,7 @@ public class PlayerController : MonoBehaviour
                 source.GenerateImpulse();
                 Instantiate(playerDeathParticle, transform.position, transform.rotation);
                 crosshair.isGameOver = true;
+                levelManager.StartCoroutine("gameOver");
                 gameObject.SetActive(false);
             }
         }
@@ -170,5 +176,4 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         spriteRenderer.color = Color.white;
     }
-
 }

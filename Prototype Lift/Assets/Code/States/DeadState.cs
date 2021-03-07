@@ -17,6 +17,7 @@ public class DeadState : State
         
         GameObject.Instantiate(stateData.deathExplosion, entity.aliveGO.transform.position, entity.aliveGO.transform.rotation);
         stateData.shake();
+        entity.levelManager.addKills();
         entity.gameObject.SetActive(false);
         //entity.enemyDestroyed();
     }

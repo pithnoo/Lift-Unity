@@ -27,6 +27,7 @@ public class Entity : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public GameObject[] AI;
     public float SpaceBetween;
+    public LevelManager levelManager;
     public virtual void Start(){
         currentHealth = entityData.maxHealth;
         facingDirection = 1;
@@ -39,6 +40,7 @@ public class Entity : MonoBehaviour
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStateMachine>();
+        levelManager = FindObjectOfType<LevelManager>();
 
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 

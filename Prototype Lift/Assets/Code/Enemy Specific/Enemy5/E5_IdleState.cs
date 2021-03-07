@@ -31,4 +31,6 @@ public class E5_IdleState : IdleState
     {
         base.PhysicsUpdate();
     }
+
+    
 }
