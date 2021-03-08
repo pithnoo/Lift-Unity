@@ -41,6 +41,6 @@ public class Enemy2 : Entity
 
     public virtual void forceFieldBroken(){
         invincible = false;
-        Debug.Log("broken");
+        //Debug.Log("broken");
     }
 }

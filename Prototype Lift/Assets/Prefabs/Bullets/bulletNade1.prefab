@@ -172,4 +172,4 @@ MonoBehaviour:
     type: 3}
   nadeExplosion: {fileID: 8801937375971197960, guid: 76a688e57f1150d41bcb5865b9a09177,
     type: 3}
-  damage: 20
+  damage: 25

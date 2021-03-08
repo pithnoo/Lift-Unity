@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Recharge()
     {
-        Debug.Log("recharge activated");
+        //Debug.Log("recharge activated");
         isRecharging = true;
 
         while(currentCharge < maxCharge){
