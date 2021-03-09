@@ -58,6 +58,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   AI: []
   SpaceBetween: 2
+  levelManager: {fileID: 0}
   idleStateData: {fileID: 11400000, guid: f4a361465203a284f8781a73e499238a, type: 2}
   playerDetectedData: {fileID: 11400000, guid: e26dda8b6794d714da461de368306225, type: 2}
   deadStateData: {fileID: 11400000, guid: e85d41aea079d7945b7d87720130ac86, type: 2}
@@ -266,8 +267,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 760585293
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -6812297976546540516, guid: 6893a7a2256b53a4ca083f53cd6e6295,
     type: 3}
@@ -384,8 +385,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 760585293
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -7520305086653570447, guid: 6893a7a2256b53a4ca083f53cd6e6295,
     type: 3}

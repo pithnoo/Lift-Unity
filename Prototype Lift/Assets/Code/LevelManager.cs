@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     {
         killCount = 0;
         gemCount = 0;
-        currentLevel = 1;
+        //currentLevel = 1;
         playerController = FindObjectOfType<PlayerController>();
         levelPortal = FindObjectOfType<LevelPortal>();
         waveSpawner = FindObjectOfType<WaveSpawner>();
@@ -78,11 +78,15 @@ public class LevelManager : MonoBehaviour
                 break;
             case 4:
                 killGoal = 40;
-                enemiesAvailable = 4;
+                enemiesAvailable = 3;
                 break;
             case 5:
                 killGoal = 50;
-                enemiesAvailable = 5;
+                enemiesAvailable = 4;
+                break;
+            default:
+                killGoal = 60;
+                enemiesAvailable = 4;
                 break;
         }
     }

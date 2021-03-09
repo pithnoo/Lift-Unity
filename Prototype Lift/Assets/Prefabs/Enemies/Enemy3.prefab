@@ -167,8 +167,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 760585293
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7988552166781349213, guid: 96df49866edb5914d8c27ac0cc9b9b48,
     type: 3}
@@ -360,6 +360,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   AI: []
   SpaceBetween: 1.4
+  levelManager: {fileID: 0}
   idleStateData: {fileID: 11400000, guid: d04fe3342b8c2534797dd3094a684c25, type: 2}
   playerDetectedData: {fileID: 11400000, guid: d5f421250a8f6d243b54de145ca12690, type: 2}
   deadStateData: {fileID: 11400000, guid: a9f9278c2b5bddb4fb54b8d1a66d6d98, type: 2}
