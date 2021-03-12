@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     public Color levelCompleteColour;
     public LevelPortal levelPortal;
     public WaveSpawner waveSpawner;
+    public float pauseTime;
+    public GameObject gameOverUI;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +56,8 @@ public class LevelManager : MonoBehaviour
     public IEnumerator gameOver(){
         waveSpawner.gameObject.SetActive(false);
         yield return new WaitForSeconds(2);
-        Time.timeScale = 0f;
+        Time.timeScale = 0;
+        gameOverUI.SetActive(true);
     }
 
     public void goToNextLevel(){
