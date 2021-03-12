@@ -40,6 +40,7 @@ public class ShootAttackState : AttackState
     {
         base.TriggerAttack();
 
+        entity.audioManager.Play("EnemyShot");
         fireProjectile();
     }
     public void fireProjectile(){

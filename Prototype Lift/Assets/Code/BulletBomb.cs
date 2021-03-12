@@ -32,6 +32,7 @@ public class BulletBomb : MonoBehaviour
             other.transform.parent.SendMessage("damage", attackDetails);
             Instantiate(nadeExplosion, transform.position, transform.rotation); 
         }  
+        FindObjectOfType<AudioManager>().Play("NadeExplosion");
         Destroy(gameObject);
     }
 

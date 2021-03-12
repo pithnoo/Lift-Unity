@@ -31,6 +31,7 @@ public class LevelPortal : MonoBehaviour
     }
 
     public void activatePortal(){
+        FindObjectOfType<AudioManager>().Play("PortalOpen");
         isActivated = true;
         spriteRenderer.sprite = portalActivated;
         portalParticle.SetActive(true);

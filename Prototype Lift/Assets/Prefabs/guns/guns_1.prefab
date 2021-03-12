@@ -104,6 +104,8 @@ MonoBehaviour:
     type: 3}
   fireRate: 1
   animator: {fileID: 0}
+  audioManager: {fileID: 0}
+  gunSound: NadeShot
 --- !u!95 &2593796875992530333
 Animator:
   serializedVersion: 3

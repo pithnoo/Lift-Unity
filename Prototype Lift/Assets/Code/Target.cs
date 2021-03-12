@@ -29,6 +29,7 @@ public class Target : MonoBehaviour
             Destroy(gameObject);
             transform.parent.SendMessage("forceFieldBroken");
             Instantiate(deathParticle, transform.position, transform.rotation);
+            FindObjectOfType<AudioManager>().Play("FieldBroken");
         }
     }
 

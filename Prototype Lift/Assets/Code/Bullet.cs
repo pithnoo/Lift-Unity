@@ -17,6 +17,9 @@ public class Bullet : MonoBehaviour
             attackDetails.damageAmount = damage;
             collision.transform.parent.SendMessage("damage", attackDetails);
         }
+        else{
+            FindObjectOfType<AudioManager>().Play("BulletCollision");
+        }
         
         Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(gameObject);

@@ -16,6 +16,7 @@ public class Crosshair : MonoBehaviour
     public float bulletSpeed;
     public float rotationZ;
     public Gun gun;
+    public PauseMenu pauseMenu;
 
     public bool isRotated = true;
     public bool isGameOver = false;
@@ -34,24 +35,30 @@ public class Crosshair : MonoBehaviour
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));      
         difference = target - weapon.transform.position;   
 
-        if(Input.GetMouseButton(0) && !isGameOver){
-            float distance = difference.magnitude;
-            Vector2 direction = difference / distance;
-            direction.Normalize();
+        if(!PauseMenu.GameIsPaused){
+            if (Input.GetMouseButton(0) && !isGameOver)
+            {
+                float distance = difference.magnitude;
+                Vector2 direction = difference / distance;
+                direction.Normalize();
 
-            gun.fireBullet(direction, rotationZ);
-        }
+                gun.fireBullet(direction, rotationZ);
+            }
 
-        if(target.x > player.transform.position.x){
-            isRotated = true;
-            weapon.transform.localScale = new Vector3(1,1,1);
-            player.transform.localScale = new Vector3(2,2,1);   
+            if (target.x > player.transform.position.x)
+            {
+                isRotated = true;
+                weapon.transform.localScale = new Vector3(1, 1, 1);
+                player.transform.localScale = new Vector3(2, 2, 1);
+            }
+            else if (target.x < player.transform.position.x)
+            {
+                isRotated = false;
+                weapon.transform.localScale = new Vector3(-1, -1, 1);
+                player.transform.localScale = new Vector3(-2, 2, 1);
+            }
         }
-        else if(target.x < player.transform.position.x){
-            isRotated = false;
-            weapon.transform.localScale = new Vector3(-1,-1,1);
-            player.transform.localScale = new Vector3(-2,2,1);   
-        }
+        
     }
 
     void FixedUpdate() {

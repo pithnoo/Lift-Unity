@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public Color hurtColour;
     public SpriteRenderer spriteRenderer;
     public LevelManager levelManager;
+    public AudioManager audioManager;
     
     void Start(){
         healthBar = FindObjectOfType<HealthBar>();
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         levelManager = FindObjectOfType<LevelManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         currentHealth = maxHealth;
         currentCharge = maxCharge;
@@ -106,6 +108,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash()
     {
         invincible = true;
+        audioManager.Play("Dash");
 
         animator.SetBool("isDashing",true);
         source.GenerateImpulse();
@@ -153,6 +156,7 @@ public class PlayerController : MonoBehaviour
 
     public void damage(AttackDetails attackDetails){
         if(!invincible){
+
             damageSource.GenerateImpulse();
             StartCoroutine("hitFlash");
             currentHealth -= attackDetails.damageAmount;
@@ -162,11 +166,15 @@ public class PlayerController : MonoBehaviour
 
             if (currentHealth <= 0)
             {
+                audioManager.Play("PlayerDeath");
                 source.GenerateImpulse();
                 Instantiate(playerDeathParticle, transform.position, transform.rotation);
                 crosshair.isGameOver = true;
                 levelManager.StartCoroutine("gameOver");
                 gameObject.SetActive(false);
+            }
+            else{
+                audioManager.Play("PlayerHurt");
             }
         }
     }

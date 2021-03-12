@@ -40,5 +40,6 @@ public class E3_BurstAttackState : BurstAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+        entity.audioManager.Play("EnemyBurst");
     }
 }

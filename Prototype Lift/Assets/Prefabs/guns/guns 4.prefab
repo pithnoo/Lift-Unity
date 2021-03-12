@@ -134,6 +134,8 @@ MonoBehaviour:
     type: 3}
   fireRate: 10
   animator: {fileID: 0}
+  audioManager: {fileID: 0}
+  gunSound: SMGShot
 --- !u!95 &4703546825636567566
 Animator:
   serializedVersion: 3

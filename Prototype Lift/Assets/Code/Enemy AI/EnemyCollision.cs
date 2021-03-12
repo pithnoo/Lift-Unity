@@ -16,6 +16,7 @@ public class EnemyCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player" && !player.invincible){
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
             
             attackDetails.damageAmount = collisionDamage;
 

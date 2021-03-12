@@ -28,6 +28,7 @@ public class Entity : MonoBehaviour
     public GameObject[] AI;
     public float SpaceBetween;
     public LevelManager levelManager;
+    public AudioManager audioManager;
     public virtual void Start(){
         currentHealth = entityData.maxHealth;
         facingDirection = 1;
@@ -41,6 +42,7 @@ public class Entity : MonoBehaviour
         anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStateMachine>();
         levelManager = FindObjectOfType<LevelManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
@@ -102,6 +104,7 @@ public class Entity : MonoBehaviour
             if (currentHealth <= 0)
             {
                 isDead = true;
+                audioManager.Play("EnemyHurt");
             }
         }
     }
