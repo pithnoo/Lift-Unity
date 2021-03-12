@@ -5,7 +5,7 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     private Vector3 target;
-    public GameObject crosshair;
+    //public GameObject crosshair;
     public GameObject weapon;
 
     //public GameObject bulletPrefab;
@@ -55,7 +55,7 @@ public class Crosshair : MonoBehaviour
     }
 
     void FixedUpdate() {
-        crosshair.transform.position = new Vector2(target.x, target.y);
+        //crosshair.transform.position = new Vector2(target.x, target.y);
         rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
     }
