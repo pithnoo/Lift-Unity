@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public WaveSpawner waveSpawner;
     public float pauseTime;
     public GameObject gameOverUI;
+    public bool isGameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public IEnumerator gameOver(){
+        isGameOver = true;
         waveSpawner.gameObject.SetActive(false);
         yield return new WaitForSeconds(2);
         Time.timeScale = 0;

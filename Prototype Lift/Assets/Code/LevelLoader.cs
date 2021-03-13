@@ -5,24 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public CircleTransition circleTransition;
-    public string sceneName;
+    public Animator transition;
+    public float transitionTime = 1f;
+    public AudioManager audioManager;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0)){
-            loadNextLevel();
-        }
+    void Start() {
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
-    public void loadNextLevel(){
-        StartCoroutine("LoadLevel");
+    public void loadLevel(int sceneNumber){
+        StartCoroutine(LoadLevel(sceneNumber));
     }
 
-    IEnumerator LoadLevel(){
-        circleTransition.StartCoroutine("LevelTransition");
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadSceneAsync(sceneName);
+    public IEnumerator LoadLevel(int levelIndex){
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadSceneAsync(levelIndex);
     }
 }

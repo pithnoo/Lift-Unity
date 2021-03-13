@@ -46,7 +46,7 @@ MonoBehaviour:
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
     m_RawSignal: {fileID: 11400000, guid: e09c93bf1c4d3774a9de1a0301cae8f2, type: 2}
-    m_AmplitudeGain: 1
+    m_AmplitudeGain: 3
     m_FrequencyGain: 10
     m_RepeatMode: 0
     m_Randomize: 0
@@ -64,9 +64,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_AttackTime: 0
-      m_SustainTime: 0.05
-      m_DecayTime: 0.3
-      m_ScaleWithImpact: 1
+      m_SustainTime: 0.1
+      m_DecayTime: 0.1
+      m_ScaleWithImpact: 0
       m_HoldForever: 0
     m_ImpactRadius: 100
     m_DirectionMode: 0

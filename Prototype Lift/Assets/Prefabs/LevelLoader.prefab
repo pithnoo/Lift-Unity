@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833a85baac6a15a4b9c86d83d8375b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleTransition: {fileID: 0}
   sceneName: Menu
+  transition: {fileID: 155724986470565724}
+  transitionTime: 1
 --- !u!1 &155724985997822872
 GameObject:
   m_ObjectHideFlags: 0
