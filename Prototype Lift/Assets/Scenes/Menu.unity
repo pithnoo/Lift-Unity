@@ -1026,7 +1026,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1794732036}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1680689411}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ExitInstructions2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &390878510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,7 +1999,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1351138754}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1680689411}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ExitWeaponSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &796017095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,7 +2281,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1710730743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1680689411}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ExitInstructions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &861979755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4200,6 +4236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 0}
   audioManager: {fileID: 191906840}
+  instructions: {fileID: 234362815}
+  instructions2: {fileID: 2108486197}
+  weaponSelectScreen: {fileID: 566726012}
 --- !u!1 &1710730741
 GameObject:
   m_ObjectHideFlags: 0

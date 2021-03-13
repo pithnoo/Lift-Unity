@@ -11,6 +11,10 @@ public class AudioManager : MonoBehaviour
     public string currentSong;
 
     // Start is called before the first frame update
+
+    void Start() {
+        Play("MenuTheme");
+    }
     void Awake()
     {
         if(instance == null){

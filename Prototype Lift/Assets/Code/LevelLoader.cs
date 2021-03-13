@@ -8,6 +8,7 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     public AudioManager audioManager;
+    public int selectedWeapon = 0;
 
     void Start() {
         //audioManager = FindObjectOfType<AudioManager>();
