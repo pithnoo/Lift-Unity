@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -43,10 +44,15 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void LoadMenu(){
+
+        if(FindObjectOfType<PlayerController>() != null){
+            FindObjectOfType<PlayerController>().invincible = true;
+        }
+        
         audioManager.Play("Select");
         levelLoader.loadLevel(0);
-        Time.timeScale = 1;
         audioManager.Play("MenuTheme");
+        Time.timeScale = 1;
     }
 
     public void QuitGame(){

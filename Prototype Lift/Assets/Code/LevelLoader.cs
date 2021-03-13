@@ -10,7 +10,7 @@ public class LevelLoader : MonoBehaviour
     public AudioManager audioManager;
 
     void Start() {
-        audioManager = FindObjectOfType<AudioManager>();
+        //audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void loadLevel(int sceneNumber){
