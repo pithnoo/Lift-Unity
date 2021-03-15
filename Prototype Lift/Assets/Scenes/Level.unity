@@ -7405,7 +7405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &692236766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7464,22 +7464,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692236765}
   m_CullTransparentMesh: 1
---- !u!114 &692236769
-MonoBehaviour:
+--- !u!225 &692236769
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692236765}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4560ee64050e194f922f7d46f24859d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 1
-  duration: 1
-  opacity: 0
-  tweenType: 21
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &717472903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6587254749255284720, guid: 4527ec0a494d8a643b06319aefe8e889,
@@ -8437,6 +8433,7 @@ GameObject:
   - component: {fileID: 1226479906}
   - component: {fileID: 1226479905}
   - component: {fileID: 1226479909}
+  - component: {fileID: 1226479910}
   m_Layer: 5
   m_Name: GamePlayUI
   m_TagString: Untagged
@@ -8549,6 +8546,24 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   levelLoader: {fileID: 0}
   audioManager: {fileID: 0}
+--- !u!114 &1226479910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226479904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4560ee64050e194f922f7d46f24859d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  duration: 1
+  inOpacity: 0.5
+  outOpacity: 0
+  tweenType: 1
+  imageFade: {fileID: 692236767}
 --- !u!1 &1298044032
 GameObject:
   m_ObjectHideFlags: 0
@@ -11767,7 +11782,7 @@ MonoBehaviour:
   killCount: 0
   killGoal: 0
   gemCount: 0
-  currentLevel: 1
+  currentLevel: 5
   enemiesAvailable: 0
   playerController: {fileID: 0}
   killText: {fileID: 447664399}

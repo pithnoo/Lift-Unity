@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0d166fda4b00f4394a4b3191efa10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 40
   objectHealth: 0
   damageColour: {r: 0.3, g: 0.09843749, b: 0.13359371, a: 1}
   deathParticle: {fileID: 5252364761722087561, guid: 00fc1116189b0e645868e8a394b0f930,
