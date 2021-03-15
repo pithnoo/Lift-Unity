@@ -7215,6 +7215,7 @@ GameObject:
   - component: {fileID: 494771918}
   - component: {fileID: 494771920}
   - component: {fileID: 494771919}
+  - component: {fileID: 494771922}
   m_Layer: 5
   m_Name: LevelText
   m_TagString: Untagged
@@ -7229,7 +7230,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494771917}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7339,6 +7340,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494771917}
   m_CullTransparentMesh: 1
+--- !u!225 &494771922
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494771917}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &531066564
 GameObject:
   m_ObjectHideFlags: 0
@@ -7398,6 +7411,7 @@ GameObject:
   - component: {fileID: 692236766}
   - component: {fileID: 692236768}
   - component: {fileID: 692236767}
+  - component: {fileID: 692236770}
   - component: {fileID: 692236769}
   m_Layer: 5
   m_Name: Level Bar
@@ -7405,7 +7419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &692236766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7413,7 +7427,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692236765}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7439,7 +7453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7464,7 +7478,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692236765}
   m_CullTransparentMesh: 1
---- !u!225 &692236769
+--- !u!114 &692236769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692236765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7b3ead07354c742a98e206336adddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  duration: 1
+  inOpacity: 1
+  outOpacity: 0
+  tweenType: 1
+--- !u!225 &692236770
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8553,7 +8584,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226479904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4560ee64050e194f922f7d46f24859d, type: 3}
   m_Name: 
@@ -8564,6 +8595,8 @@ MonoBehaviour:
   outOpacity: 0
   tweenType: 1
   imageFade: {fileID: 692236767}
+  textFade: {fileID: 494771919}
+  test: {fileID: 494771917}
 --- !u!1 &1298044032
 GameObject:
   m_ObjectHideFlags: 0
@@ -11782,7 +11815,7 @@ MonoBehaviour:
   killCount: 0
   killGoal: 0
   gemCount: 0
-  currentLevel: 5
+  currentLevel: 1
   enemiesAvailable: 0
   playerController: {fileID: 0}
   killText: {fileID: 447664399}
