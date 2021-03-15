@@ -7251,7 +7251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7626a8a6cc12cab4c8ec337d3841faae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 3
+  selectedWeapon: 0
 --- !u!4 &717472903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6587254749255284720, guid: 4527ec0a494d8a643b06319aefe8e889,
@@ -11538,7 +11538,7 @@ MonoBehaviour:
   killCount: 0
   killGoal: 0
   gemCount: 0
-  currentLevel: 5
+  currentLevel: 3
   enemiesAvailable: 0
   playerController: {fileID: 0}
   killText: {fileID: 447664399}
