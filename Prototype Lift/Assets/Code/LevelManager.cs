@@ -40,8 +40,10 @@ public class LevelManager : MonoBehaviour
     }
 
     public void addKills(){
-        killCount++;
-        killText.text = killCount.ToString() + "/" + killGoal.ToString();
+        if(killCount < killGoal){
+            killCount++;
+            killText.text = killCount.ToString() + "/" + killGoal.ToString();
+        }
         if(killCount >= killGoal){
             killText.color = levelCompleteColour;
             waveSpawner.LevelComplete();

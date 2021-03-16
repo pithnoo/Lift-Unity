@@ -152,4 +152,16 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: PortalSpawning
+    clip: {fileID: 8300000, guid: e1225fbd52791ba48b5db6608dd7b573, type: 3}
+    volume: 0.78
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PortalWarp
+    clip: {fileID: 8300000, guid: e017cc35a3187f540b69cd2323bb2212, type: 3}
+    volume: 0.78
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   currentSong: 

@@ -26,12 +26,14 @@ public class WaveSpawner2 : MonoBehaviour
     private float searchCountdown = 1f;
     public level[] levels;
     public int currentLevel;
+    public LevelPortal levelPortal;
 
     // Start is called before the first frame update
     void Start()
     {
         currentLevel = levelManager.currentLevel - 1;
         waveCountDown = levels[currentLevel].timeBetweenWaves;
+        levelPortal = FindObjectOfType<LevelPortal>();
     }
 
     // Update is called once per frame
@@ -63,6 +65,7 @@ public class WaveSpawner2 : MonoBehaviour
         
         //Debug.Log("Spawning Wave: " + _wave.name);
         state = SpawnState.SPAWNING;
+        levelPortal.spawningEnemies();
 
         //spawn
         for(int i = 0; i < _level.count; i++){
@@ -71,6 +74,7 @@ public class WaveSpawner2 : MonoBehaviour
         }
 
         state = SpawnState.WAITING;
+        levelPortal.stopSpawning();
         yield break;
     }
 
