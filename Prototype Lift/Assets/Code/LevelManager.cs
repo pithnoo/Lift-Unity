@@ -10,13 +10,14 @@ public class LevelManager : MonoBehaviour
     public int currentLevel;
     public int enemiesAvailable;
     public PlayerController playerController;
-    public TextMeshProUGUI killText, gemText;
+    public TextMeshProUGUI killText, gemText, levelText;
     public Color levelCompleteColour;
     public LevelPortal levelPortal;
-    public WaveSpawner waveSpawner;
+    public WaveSpawner2 waveSpawner;
     public float pauseTime;
     public GameObject gameOverUI;
     public bool isGameOver = false;
+    public GameObject levelBar;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class LevelManager : MonoBehaviour
         //currentLevel = 1;
         playerController = FindObjectOfType<PlayerController>();
         levelPortal = FindObjectOfType<LevelPortal>();
-        waveSpawner = FindObjectOfType<WaveSpawner>();
+        waveSpawner = FindObjectOfType<WaveSpawner2>();
 
         updateKillGoal();
         killText.text = killCount.ToString() + "/" + killGoal.ToString();
@@ -48,6 +49,9 @@ public class LevelManager : MonoBehaviour
             killText.color = levelCompleteColour;
             waveSpawner.LevelComplete();
             levelPortal.activatePortal();
+
+            levelText.text = "COMPLETE";
+            levelBar.gameObject.SetActive(true);
         }
     }
 
@@ -98,5 +102,9 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void updateProgress(){
+        levelText.text = currentLevel.ToString() + "-" + waveSpawner.currentWave.ToString();
+        levelBar.gameObject.SetActive(true);
+    }
 
 }

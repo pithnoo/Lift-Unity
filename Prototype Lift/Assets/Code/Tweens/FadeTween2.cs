@@ -21,6 +21,10 @@ public class FadeTween2 : MonoBehaviour
 
     void fadeOut(){
         CanvasGroup canvasGroup = this.gameObject.GetComponent<CanvasGroup>();
-        LeanTween.alphaCanvas(canvasGroup, outOpacity, duration).setDelay(delay).setEase(tweenType);
+        LeanTween.alphaCanvas(canvasGroup, outOpacity, duration).setDelay(delay).setEase(tweenType).setOnComplete(sleep);
+    }
+
+    void sleep(){
+        gameObject.SetActive(false);
     }
 }

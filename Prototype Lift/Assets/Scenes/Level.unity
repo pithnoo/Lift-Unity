@@ -7130,7 +7130,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494771919
 MonoBehaviour:
@@ -7152,7 +7152,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1-1
+  m_text: 1-0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2cfc86db52fe014eb06d32a589dbaa8, type: 2}
   m_sharedMaterial: {fileID: -6250964447279453623, guid: e2cfc86db52fe014eb06d32a589dbaa8,
@@ -7277,7 +7277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7626a8a6cc12cab4c8ec337d3841faae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 2
+  selectedWeapon: 1
 --- !u!1 &630344693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6910933056993917084, guid: 85eaf7e37aaf7c043a87f37cf6dcc840,
@@ -11773,17 +11773,19 @@ MonoBehaviour:
   killCount: 0
   killGoal: 0
   gemCount: 0
-  currentLevel: 1
+  currentLevel: 5
   enemiesAvailable: 0
   playerController: {fileID: 0}
   killText: {fileID: 447664399}
   gemText: {fileID: 2066196307}
+  levelText: {fileID: 494771919}
   levelCompleteColour: {r: 0.08334541, g: 1, b: 0, a: 1}
   levelPortal: {fileID: 0}
-  waveSpawner: {fileID: 0}
+  waveSpawner: {fileID: 1857043704}
   pauseTime: 0
   gameOverUI: {fileID: 1404137694}
   isGameOver: 0
+  levelBar: {fileID: 692236765}
 --- !u!4 &1593983291
 Transform:
   m_ObjectHideFlags: 0
@@ -12792,6 +12794,7 @@ MonoBehaviour:
     - {fileID: 8789724513532877852, guid: e84c2f88e004b8d42b4cb0af56b09e82, type: 3}
     - {fileID: 7216257435638130901, guid: 22a57ae578cde5c41a5b8aad6d6ae692, type: 3}
   currentLevel: 0
+  currentWave: 0
   levelPortal: {fileID: 0}
 --- !u!1 &1863291158
 GameObject:

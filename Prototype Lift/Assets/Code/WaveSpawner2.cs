@@ -26,14 +26,17 @@ public class WaveSpawner2 : MonoBehaviour
     private float searchCountdown = 1f;
     public level[] levels;
     public int currentLevel;
+    public int currentWave;
     public LevelPortal levelPortal;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentWave = 1;
         currentLevel = levelManager.currentLevel - 1;
         waveCountDown = levels[currentLevel].timeBetweenWaves;
         levelPortal = FindObjectOfType<LevelPortal>();
+        levelManager.updateProgress();
     }
 
     // Update is called once per frame
@@ -43,6 +46,8 @@ public class WaveSpawner2 : MonoBehaviour
             if(!enemyIsAlive()){
                 //complete wave
                 Debug.Log("Wave complete");
+                currentWave++;
+                levelManager.updateProgress();
                 waveCountDown = levels[currentLevel].timeBetweenWaves;
                 state = SpawnState.COUNTING;
             }
@@ -96,5 +101,9 @@ public class WaveSpawner2 : MonoBehaviour
         //Debug.Log("Spawning enemy: " + _enemy.name);
         int x = Random.Range(0,enemies.Length);
         Instantiate(enemies[x], transform.position, transform.rotation); // spawns enemy at position
+    }
+
+    public void LevelComplete(){
+        gameObject.SetActive(false);
     }
 }
