@@ -43,4 +43,8 @@ public class LevelPortal : MonoBehaviour
         portalParticle.SetActive(false);
     }
 
+    public void spawningEnemies(){
+        
+    }
+
 }
