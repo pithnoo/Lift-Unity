@@ -37,10 +37,13 @@ public class LevelPortal : MonoBehaviour
 
             if(!playerController.isDashing){
                 playerController.gameObject.SetActive(false);
+
                 Instantiate(playerController.playerDeathParticle, transform.position, transform.rotation);
                 FindObjectOfType<AudioManager>().Play("PortalWarp");
+
                 animator.SetBool("isActivated", false);
                 portalParticle.SetActive(false);
+                
                 source.GenerateImpulse();
             }
         }
