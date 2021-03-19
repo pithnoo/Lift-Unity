@@ -16,12 +16,14 @@ public class LevelManager : MonoBehaviour
     public WaveSpawner2 waveSpawner;
     public float pauseTime;
     public GameObject gameOverUI;
-    public bool isGameOver = false;
+    public bool isGameOver;
+    public bool isComplete = false;
     public GameObject levelBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        isGameOver = false;
         killCount = 0;
 
         if(PlayerPrefs.HasKey("CurrentGems")){
@@ -64,8 +66,10 @@ public class LevelManager : MonoBehaviour
             waveSpawner.LevelComplete();
             levelPortal.activatePortal();
 
-            levelText.text = "COMPLETE";
-            levelBar.gameObject.SetActive(true);
+            if(!isComplete){
+                levelText.text = "COMPLETE";
+                levelBar.gameObject.SetActive(true);
+            }
         }
     }
 

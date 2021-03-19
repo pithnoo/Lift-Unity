@@ -11,11 +11,13 @@ public class LevelLoader : MonoBehaviour
     public LevelManager levelManager;
     public PlayerController playerController;
     public int selectedWeapon = 0;
+    public Crosshair crosshair;
 
     void Start() {
         //audioManager = FindObjectOfType<AudioManager>();
         levelManager = FindObjectOfType<LevelManager>();
         playerController = FindObjectOfType<PlayerController>();
+        crosshair = FindObjectOfType<Crosshair>();
     }
 
     public void loadLevel(int sceneNumber){
@@ -35,6 +37,8 @@ public class LevelLoader : MonoBehaviour
 
     public IEnumerator LoadLevelAndSave(int levelIndex){
         //Cursor.visible = false;
+        crosshair.isGameOver = true;
+        yield return new WaitForSeconds(transitionTime);
         levelManager.convertToGems();
 
         PlayerPrefs.SetInt("CurrentLevel", levelManager.currentLevel);

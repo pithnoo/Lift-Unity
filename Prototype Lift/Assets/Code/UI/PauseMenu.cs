@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     void Start() {
         levelManager = FindObjectOfType<LevelManager>();
         levelLoader = FindObjectOfType<LevelLoader>();
-        audioManager = FindObjectOfType<AudioManager>();
+        //audioManager = FindObjectOfType<AudioManager>();
     }
     void Update() {
         if(Input.GetKeyDown(KeyCode.Escape) && !levelManager.isGameOver){
@@ -30,14 +30,14 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume(){
-        audioManager.Play("Pause");
+        FindObjectOfType<AudioManager>().Play("Pause");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
     }
 
     public void Pause(){
-        audioManager.Play("Pause");
+        FindObjectOfType<AudioManager>().Play("Pause");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         GameIsPaused = true;
@@ -49,9 +49,9 @@ public class PauseMenu : MonoBehaviour
             FindObjectOfType<PlayerController>().invincible = true;
         }
         
-        audioManager.Play("Select");
+        FindObjectOfType<AudioManager>().Play("Select");
         levelLoader.loadLevel(0);
-        audioManager.Play("MenuTheme");
+        FindObjectOfType<AudioManager>().Play("MenuTheme");
         Time.timeScale = 1;
     }
 

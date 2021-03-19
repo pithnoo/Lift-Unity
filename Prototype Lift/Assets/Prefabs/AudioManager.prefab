@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: SniperShot
     clip: {fileID: 8300000, guid: b73d9fca70ab69542b7116a0c5409159, type: 3}
-    volume: 0.78
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -51,6 +51,7 @@ public class Menu : MonoBehaviour
     }
 
     public void SelectWeapon(int selectedWeapon){
+        FindObjectOfType<AudioManager>().stopPlaying("MenuTheme");
         PlayerPrefs.SetInt("SelectedWeapon", selectedWeapon);
         FindObjectOfType<AudioManager>().Play("Select");
         levelLoader.loadLevel(1);

@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
     public void fireBullet(Vector2 direction, float rotationZ){
         if (Time.time >= nextTimeToFire)
         {
+            //Debug.Log("isActiveAndEnabled");
             FindObjectOfType<AudioManager>().Play(gunSound);
 
             nextTimeToFire = Time.time + 1f/fireRate;

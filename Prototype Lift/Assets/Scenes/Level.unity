@@ -221,7 +221,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -5017,7 +5017,7 @@ PrefabInstance:
     - target: {fileID: 9214796056889214527, guid: 34312ddb40383b34f8155b8cd2f29513,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9214796056889214527, guid: 34312ddb40383b34f8155b8cd2f29513,
         type: 3}
@@ -11664,6 +11664,7 @@ MonoBehaviour:
   pauseTime: 0
   gameOverUI: {fileID: 1404137694}
   isGameOver: 0
+  isComplete: 0
   levelBar: {fileID: 692236765}
 --- !u!4 &1593983291
 Transform:
@@ -11738,7 +11739,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -7159103602387690353, guid: 8b9362ec26116234c9546a37678564f2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12057,12 +12058,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725634421}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1752533493
 GameObject:
@@ -13612,7 +13613,7 @@ PrefabInstance:
     - target: {fileID: 155724985261074035, guid: cb6cfef3416dc3d498d69bf51bd24c91,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 155724985261074035, guid: cb6cfef3416dc3d498d69bf51bd24c91,
         type: 3}

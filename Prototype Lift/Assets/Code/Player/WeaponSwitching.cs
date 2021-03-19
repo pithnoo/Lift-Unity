@@ -9,7 +9,12 @@ public class WeaponSwitching : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        selectedWeapon = PlayerPrefs.GetInt("SelectedWeapon");
+        if(PlayerPrefs.HasKey("SelectedWeapon")){
+            selectedWeapon = PlayerPrefs.GetInt("SelectedWeapon");
+        }
+        else{
+            return;
+        }
         SelectWeapon(selectedWeapon);
     }
 
