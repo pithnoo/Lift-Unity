@@ -52,9 +52,19 @@ public class PlayerController : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         audioManager = FindObjectOfType<AudioManager>();
 
-        currentHealth = maxHealth;
-        currentCharge = maxCharge;
         healthBar.SetMaxHealth(maxHealth);
+
+        if(PlayerPrefs.HasKey("CurrentHealth") && PlayerPrefs.GetFloat("CurrentHealth") > 0){
+            currentHealth = PlayerPrefs.GetFloat("CurrentHealth");
+            healthBar.SetHealth(currentHealth);
+            Debug.Log("Active");
+        }
+        else{
+            currentHealth = maxHealth;
+        }
+
+
+        currentCharge = maxCharge;
         dashBar.SetCharge(maxCharge);
         invincible = false;
     }
@@ -108,7 +118,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash()
     {
         invincible = true;
-        audioManager.Play("Dash");
+        FindObjectOfType<AudioManager>().Play("Dash");
 
         animator.SetBool("isDashing",true);
         source.GenerateImpulse();

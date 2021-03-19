@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8202612731974128075}
   - component: {fileID: 8202612731974128073}
   - component: {fileID: 8202612731974128072}
+  - component: {fileID: -250260623851011117}
   m_Layer: 11
   m_Name: PortalParticle2
   m_TagString: Untagged
@@ -4864,3 +4865,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-250260623851011117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202612731974128074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67af523150646cc4aa890a7ca6186c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.5

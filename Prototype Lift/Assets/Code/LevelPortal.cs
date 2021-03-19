@@ -18,6 +18,9 @@ public class LevelPortal : MonoBehaviour
     public PlayerController playerController;
     public CinemachineImpulseSource source;
     public bool soundPlayed;
+    public bool isMerchant = false;
+    public LevelLoader levelLoader;
+    public LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,15 @@ public class LevelPortal : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<PlayerController>();
+        levelLoader = FindObjectOfType<LevelLoader>();
+        levelManager = FindObjectOfType<LevelManager>();
+
+        if(isMerchant){
+            StartCoroutine("delayedActivation");
+        }
+        else{
+            return;
+        }
     }
 
     void Update() {
@@ -45,6 +57,14 @@ public class LevelPortal : MonoBehaviour
                 portalParticle.SetActive(false);
                 
                 source.GenerateImpulse();
+
+                if(isMerchant){
+                    levelManager.currentLevel++;
+                    levelLoader.loadLevelAndSave(1);
+                }
+                else{
+                    levelLoader.loadLevelAndSave(2);
+                }
             }
         }
         else{
@@ -79,6 +99,11 @@ public class LevelPortal : MonoBehaviour
 
     public void stopSpawning(){
         animator.SetBool("isSpawning", false);
+    }
+
+    public IEnumerator delayedActivation(){
+        yield return new WaitForSeconds(3);
+        activatePortal();
     }
 
 }

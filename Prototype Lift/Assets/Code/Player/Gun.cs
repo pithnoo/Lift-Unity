@@ -17,13 +17,13 @@ public class Gun : MonoBehaviour
 
     void Start() {
         animator = GetComponent<Animator>();
-        audioManager = FindObjectOfType<AudioManager>();
+        //audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void fireBullet(Vector2 direction, float rotationZ){
         if (Time.time >= nextTimeToFire)
         {
-            audioManager.Play(gunSound);
+            FindObjectOfType<AudioManager>().Play(gunSound);
 
             nextTimeToFire = Time.time + 1f/fireRate;
             GameObject b = Instantiate(bulletPrefab) as GameObject;

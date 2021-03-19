@@ -26,7 +26,7 @@ public class Crosshair : MonoBehaviour
     void Start()
     {
         gun = FindObjectOfType<Gun>();
-        Cursor.visible = false;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

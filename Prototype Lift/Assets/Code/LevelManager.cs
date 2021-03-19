@@ -23,8 +23,22 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         killCount = 0;
-        gemCount = 0;
-        //currentLevel = 1;
+
+        if(PlayerPrefs.HasKey("CurrentGems")){
+            gemCount = PlayerPrefs.GetInt("CurrentGems");
+        }
+        else{
+            gemCount = 0;
+        }
+        
+        gemText.text = gemCount.ToString();
+
+        if(PlayerPrefs.HasKey("CurrentLevel")){
+            currentLevel = PlayerPrefs.GetInt("CurrentLevel");
+        }
+        else{
+            currentLevel = 1;
+        }
         playerController = FindObjectOfType<PlayerController>();
         levelPortal = FindObjectOfType<LevelPortal>();
         waveSpawner = FindObjectOfType<WaveSpawner2>();
@@ -56,7 +70,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void convertToGems(){
-        gemCount = killCount;
+        gemCount += killCount;
         killCount = 0;
     }
 
