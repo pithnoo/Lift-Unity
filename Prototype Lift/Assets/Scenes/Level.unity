@@ -7260,7 +7260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7626a8a6cc12cab4c8ec337d3841faae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 0
+  selectedWeapon: 3
 --- !u!1 &692236765
 GameObject:
   m_ObjectHideFlags: 0
@@ -12534,22 +12534,22 @@ MonoBehaviour:
     enemies:
     - {fileID: 8666598792729458411, guid: 3dda75c9dd301e348af262a7d972c984, type: 3}
   - name: Level 2
-    timeBetweenWaves: 5
+    timeBetweenWaves: 4
     count: 10
     rate: 1
     enemies:
     - {fileID: 8666598792729458411, guid: 3dda75c9dd301e348af262a7d972c984, type: 3}
     - {fileID: 7141117124395936852, guid: 67d46635949d13643be70e01c97aa025, type: 3}
   - name: Level 3
-    timeBetweenWaves: 3
+    timeBetweenWaves: 4
     count: 10
-    rate: 2
+    rate: 1
     enemies:
     - {fileID: 8666598792729458411, guid: 3dda75c9dd301e348af262a7d972c984, type: 3}
     - {fileID: 7141117124395936852, guid: 67d46635949d13643be70e01c97aa025, type: 3}
     - {fileID: 8789724513532877852, guid: e84c2f88e004b8d42b4cb0af56b09e82, type: 3}
   - name: Level 4
-    timeBetweenWaves: 2
+    timeBetweenWaves: 4
     count: 10
     rate: 2
     enemies:
@@ -12558,7 +12558,7 @@ MonoBehaviour:
     - {fileID: 8789724513532877852, guid: e84c2f88e004b8d42b4cb0af56b09e82, type: 3}
     - {fileID: 7216257435638130901, guid: 22a57ae578cde5c41a5b8aad6d6ae692, type: 3}
   - name: Level 5
-    timeBetweenWaves: 2
+    timeBetweenWaves: 4
     count: 10
     rate: 3
     enemies:
