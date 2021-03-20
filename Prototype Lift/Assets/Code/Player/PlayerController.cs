@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                audioManager.Play("PlayerDeath");
+                FindObjectOfType<AudioManager>().Play("PlayerDeath");
                 source.GenerateImpulse();
                 Instantiate(playerDeathParticle, transform.position, transform.rotation);
                 crosshair.isGameOver = true;
@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour
                 gameObject.SetActive(false);
             }
             else{
-                audioManager.Play("PlayerHurt");
+                FindObjectOfType<AudioManager>().Play("PlayerHurt");
             }
         }
     }
