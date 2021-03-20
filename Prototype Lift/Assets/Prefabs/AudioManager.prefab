@@ -164,4 +164,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Invalid
+    clip: {fileID: 8300000, guid: 53d975523f3a1b941ba51403daada495, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   currentSong: 
