@@ -58,13 +58,20 @@ public class LevelPortal : MonoBehaviour
                 
                 source.GenerateImpulse();
 
-                if(isMerchant){
-                    levelManager.currentLevel++;
-                    levelLoader.loadLevelAndSave(1);
+                if(levelManager.currentLevel == 5){
+                    levelLoader.loadLevelAndSave(3);
                 }
                 else{
-                    levelLoader.loadLevelAndSave(2);
-                }
+                    if (isMerchant)
+                    {
+                        levelManager.currentLevel++;
+                        levelLoader.loadLevelAndSave(1);
+                    }
+                    else
+                    {
+                        levelLoader.loadLevelAndSave(2);
+                    }
+                }              
             }
         }
         else{

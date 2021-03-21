@@ -8,6 +8,7 @@ using TMPro;
 public class FadeTween2 : MonoBehaviour
 {
     public float delay;
+    private string boobs;
     public float duration;
     public float inOpacity;
     public float outOpacity;

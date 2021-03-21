@@ -7274,6 +7274,7 @@ GameObject:
   - component: {fileID: 692236767}
   - component: {fileID: 692236769}
   - component: {fileID: 692236770}
+  - component: {fileID: 692236771}
   m_Layer: 5
   m_Name: Level Bar
   m_TagString: Untagged
@@ -7368,6 +7369,25 @@ MonoBehaviour:
   inOpacity: 1
   outOpacity: 0
   tweenType: 1
+--- !u!95 &692236771
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692236765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08fdddc222fb8da4a8a50e4c8dee6b0a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &759158729
 GameObject:
   m_ObjectHideFlags: 0
