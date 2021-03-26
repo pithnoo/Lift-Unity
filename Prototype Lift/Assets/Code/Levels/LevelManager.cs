@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     public bool isGameOver;
     public bool isComplete = false;
     public GameObject levelBar;
+    public WeaponSwitching weaponSwitching;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,7 @@ public class LevelManager : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
         levelPortal = FindObjectOfType<LevelPortal>();
         waveSpawner = FindObjectOfType<WaveSpawner2>();
+        weaponSwitching = FindObjectOfType<WeaponSwitching>();
 
         updateKillGoal();
         killText.text = killCount.ToString() + "/" + killGoal.ToString();
@@ -123,6 +125,15 @@ public class LevelManager : MonoBehaviour
     public void updateProgress(){
         levelText.text = currentLevel.ToString() + "-" + waveSpawner.currentWave.ToString();
         levelBar.gameObject.SetActive(true);
+    }
+
+    public void purchaseWeapon(bool isWeapon, bool isStatus){
+        if(isWeapon){
+            //purchase weapon
+        }
+        else if(isStatus){
+            //purchase status
+        }
     }
 
 }
