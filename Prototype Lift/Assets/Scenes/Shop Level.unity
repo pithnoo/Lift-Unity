@@ -694,6 +694,13 @@ MonoBehaviour:
   itemDetails: {fileID: 1181237682}
   itemText: {fileID: 343512755}
   itemCost: 10
+  weaponSwitching: {fileID: 0}
+  isWeapon: 0
+  isStatus: 0
+  weaponIdentity: 0
+  levelManager: {fileID: 0}
+  playerController: {fileID: 0}
+  purchaseParticle: {fileID: 0}
 --- !u!1 &838901177 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2802265038588188513, guid: 2dbfd65c5fc774b4fa03a5045c88717f,
@@ -1359,6 +1366,13 @@ MonoBehaviour:
   itemDetails: {fileID: 891767804}
   itemText: {fileID: 128327928}
   itemCost: 10
+  weaponSwitching: {fileID: 0}
+  isWeapon: 0
+  isStatus: 0
+  weaponIdentity: 0
+  levelManager: {fileID: 0}
+  playerController: {fileID: 0}
+  purchaseParticle: {fileID: 0}
 --- !u!1 &1729805974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2802265038588188513, guid: 2dbfd65c5fc774b4fa03a5045c88717f,
@@ -1667,6 +1681,13 @@ MonoBehaviour:
   itemDetails: {fileID: 838901177}
   itemText: {fileID: 1118224973}
   itemCost: 20
+  weaponSwitching: {fileID: 0}
+  isWeapon: 0
+  isStatus: 0
+  weaponIdentity: 0
+  levelManager: {fileID: 0}
+  playerController: {fileID: 0}
+  purchaseParticle: {fileID: 0}
 --- !u!1 &1866455789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +1838,13 @@ MonoBehaviour:
   itemDetails: {fileID: 1729805974}
   itemText: {fileID: 1618055225}
   itemCost: 10
+  weaponSwitching: {fileID: 0}
+  isWeapon: 0
+  isStatus: 0
+  weaponIdentity: 0
+  levelManager: {fileID: 0}
+  playerController: {fileID: 0}
+  purchaseParticle: {fileID: 0}
 --- !u!1 &1927278500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,6 +2570,13 @@ MonoBehaviour:
   itemDetails: {fileID: 1760164893}
   itemText: {fileID: 969319536}
   itemCost: 10
+  weaponSwitching: {fileID: 0}
+  isWeapon: 0
+  isStatus: 0
+  weaponIdentity: 0
+  levelManager: {fileID: 0}
+  playerController: {fileID: 0}
+  purchaseParticle: {fileID: 0}
 --- !u!199 &75656640162133336
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -7506,7 +7541,7 @@ PrefabInstance:
     - target: {fileID: 2802265038588188513, guid: 2dbfd65c5fc774b4fa03a5045c88717f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900692590291090395, guid: 2dbfd65c5fc774b4fa03a5045c88717f,
         type: 3}
@@ -19054,6 +19089,7 @@ MonoBehaviour:
   isGameOver: 0
   isComplete: 0
   levelBar: {fileID: 6837688745498793363}
+  weaponSwitching: {fileID: 0}
 --- !u!4 &6837688745872106869
 Transform:
   m_ObjectHideFlags: 0

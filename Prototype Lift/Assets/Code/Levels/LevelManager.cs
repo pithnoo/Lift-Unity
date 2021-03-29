@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     public GameObject levelBar;
     public WeaponSwitching weaponSwitching;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +81,7 @@ public class LevelManager : MonoBehaviour
         killCount = 0;
     }
 
+
     public IEnumerator gameOver(){
         isGameOver = true;
         waveSpawner.gameObject.SetActive(false);
@@ -127,13 +129,31 @@ public class LevelManager : MonoBehaviour
         levelBar.gameObject.SetActive(true);
     }
 
-    public void purchaseWeapon(bool isWeapon, bool isStatus){
-        if(isWeapon){
-            //purchase weapon
+    public void purchaseWeapon(int weaponIdentity, GameObject purchaseParticle, int itemCost){
+        if(gemCount >= itemCost){
+            gemCount -= itemCost;
+            Instantiate(purchaseParticle, playerController.transform.position, playerController.transform.rotation);
+            FindObjectOfType<AudioManager>().Play("Select");
+            weaponSwitching.SelectWeapon(weaponIdentity);
         }
-        else if(isStatus){
-            //purchase status
+        else{
+            Debug.Log("insufficient amount");
+            return;
         }
     }
 
+    public void purchaseStatus(GameObject purchaseParticle, int itemCost){
+        if(gemCount >= itemCost){
+            gemCount -= itemCost;
+            Instantiate(purchaseParticle, playerController.transform.position, playerController.transform.rotation);
+            FindObjectOfType<AudioManager>().Play("PowerUp");
+            playerController.currentHealth += playerController.maxHealth;
+            playerController.healthBar.SetHealth(playerController.currentHealth);
+        }
+        else{
+            Debug.Log("insufficient amount");
+            return;
+        }
+        
+    }
 }

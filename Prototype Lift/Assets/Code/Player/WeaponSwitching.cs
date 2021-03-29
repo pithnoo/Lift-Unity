@@ -24,7 +24,7 @@ public class WeaponSwitching : MonoBehaviour
         
     }
 
-    void SelectWeapon(int selectedWeapon){
+    public void SelectWeapon(int selectedWeapon){
         int i = 0;
         foreach (Transform weapon in transform)
         {

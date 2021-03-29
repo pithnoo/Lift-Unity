@@ -170,4 +170,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: PowerUp
+    clip: {fileID: 8300000, guid: 88610d44baf87c44c98f27bd7fd147c5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   currentSong: 

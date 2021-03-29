@@ -20,6 +20,8 @@ public class Indicator : MonoBehaviour
     public bool isStatus;
     public int weaponIdentity;
     public LevelManager levelManager;
+    public PlayerController playerController;
+    public GameObject purchaseParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class Indicator : MonoBehaviour
         //itemText = GetComponent<TextMeshPro>();
         itemText.text = itemCost.ToString();
         levelManager = FindObjectOfType<LevelManager>();
+        playerController = FindObjectOfType<PlayerController>();
 
     }
 
@@ -40,8 +43,14 @@ public class Indicator : MonoBehaviour
 
             itemDetails.SetActive(true);
 
-            if(Input.GetKeyDown(KeyCode.i)){
-                levelManager.purchaseWeapon(isWeapon, isStatus);
+            if(Input.GetKeyDown(KeyCode.I)){
+                //levelManager.purchaseItem(isWeapon, isStatus, weaponIdentity);
+                if(isWeapon){
+                    levelManager.purchaseWeapon(weaponIdentity, purchaseParticle, itemCost);
+                }
+                else if(isStatus){
+                    levelManager.purchaseStatus(purchaseParticle, itemCost);
+                }
             }
         }
         else{
