@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public LevelManager levelManager;
     public LevelLoader levelLoader;
     public AudioManager audioManager;
+    public GameObject instructions;
 
     void Start() {
         levelManager = FindObjectOfType<LevelManager>();
@@ -59,5 +60,16 @@ public class PauseMenu : MonoBehaviour
         //audioManager.Play("Pause");
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public void LoadInstructions(){
+        //load instructions
+        instructions.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Select");
+    }
+
+    public void ExitInstructions(){
+        instructions.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Select");
     }
 }

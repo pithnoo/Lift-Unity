@@ -68,4 +68,8 @@ public class Crosshair : MonoBehaviour
         rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
     }
+
+    public void resetGun(){
+        gun = FindObjectOfType<Gun>();
+    }
 }

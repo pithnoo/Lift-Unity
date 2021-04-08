@@ -24,11 +24,11 @@ public class WeaponSwitching : MonoBehaviour
         
     }
 
-    public void SelectWeapon(int selectedWeapon){
+    public void SelectWeapon(int chosenWeapon){
         int i = 0;
         foreach (Transform weapon in transform)
         {
-            if(i == selectedWeapon){
+            if(i == chosenWeapon){
                 weapon.gameObject.SetActive(true);
             }
             else{
@@ -36,5 +36,6 @@ public class WeaponSwitching : MonoBehaviour
             }
             i++;
         }
+        selectedWeapon = chosenWeapon;
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class LevelManager : MonoBehaviour
     public bool isComplete = false;
     public GameObject levelBar;
     public WeaponSwitching weaponSwitching;
+    public Crosshair crosshair;
+    public CinemachineImpulseSource source;
 
 
     // Start is called before the first frame update
@@ -47,6 +50,7 @@ public class LevelManager : MonoBehaviour
         levelPortal = FindObjectOfType<LevelPortal>();
         waveSpawner = FindObjectOfType<WaveSpawner2>();
         weaponSwitching = FindObjectOfType<WeaponSwitching>();
+        crosshair = FindObjectOfType<Crosshair>();
 
         updateKillGoal();
         killText.text = killCount.ToString() + "/" + killGoal.ToString();
@@ -130,28 +134,41 @@ public class LevelManager : MonoBehaviour
     }
 
     public void purchaseWeapon(int weaponIdentity, GameObject purchaseParticle, int itemCost){
-        if(gemCount >= itemCost){
+        if(gemCount >= itemCost && weaponIdentity != weaponSwitching.selectedWeapon){
+            source.GenerateImpulse();
             gemCount -= itemCost;
+            gemText.text = gemCount.ToString();
+
             Instantiate(purchaseParticle, playerController.transform.position, playerController.transform.rotation);
             FindObjectOfType<AudioManager>().Play("Select");
+
             weaponSwitching.SelectWeapon(weaponIdentity);
+            crosshair.resetGun();
+
+            PlayerPrefs.SetInt("SelectedWeapon", weaponIdentity);
         }
         else{
-            Debug.Log("insufficient amount");
+            //Debug.Log("insufficient amount");
+            FindObjectOfType<AudioManager>().Play("Invalid");
             return;
         }
     }
 
     public void purchaseStatus(GameObject purchaseParticle, int itemCost){
-        if(gemCount >= itemCost){
+        if(gemCount >= itemCost && playerController.currentHealth != playerController.maxHealth){
             gemCount -= itemCost;
+            gemText.text = gemCount.ToString();
+
             Instantiate(purchaseParticle, playerController.transform.position, playerController.transform.rotation);
             FindObjectOfType<AudioManager>().Play("PowerUp");
-            playerController.currentHealth += playerController.maxHealth;
+
+            playerController.currentHealth = playerController.maxHealth;
             playerController.healthBar.SetHealth(playerController.currentHealth);
+
         }
         else{
-            Debug.Log("insufficient amount");
+            //Debug.Log("insufficient amount");
+            FindObjectOfType<AudioManager>().Play("Invalid");
             return;
         }
         

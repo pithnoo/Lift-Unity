@@ -43,7 +43,7 @@ public class Indicator : MonoBehaviour
 
             itemDetails.SetActive(true);
 
-            if(Input.GetKeyDown(KeyCode.I)){
+            if(Input.GetKeyDown(KeyCode.E)) {
                 //levelManager.purchaseItem(isWeapon, isStatus, weaponIdentity);
                 if(isWeapon){
                     levelManager.purchaseWeapon(weaponIdentity, purchaseParticle, itemCost);
