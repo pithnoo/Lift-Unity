@@ -11,7 +11,7 @@ public class GameEndUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gemText.text = " X " + PlayerPrefs.GetInt("CurrentGems").ToString();
+        gemText.text = PlayerPrefs.GetInt("CurrentGems").ToString();
         levelLoader = FindObjectOfType<LevelLoader>();
     }
 

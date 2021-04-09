@@ -60,6 +60,7 @@ public class LevelPortal : MonoBehaviour
 
                 if(levelManager.currentLevel == 5){
                     levelLoader.loadLevelAndSave(3);
+                    FindObjectOfType<AudioManager>().Play("MenuTheme");
                 }
                 else{
                     if (isMerchant)
