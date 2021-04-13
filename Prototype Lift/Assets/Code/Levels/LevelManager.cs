@@ -156,6 +156,7 @@ public class LevelManager : MonoBehaviour
 
     public void purchaseStatus(GameObject purchaseParticle, int itemCost){
         if(gemCount >= itemCost && playerController.currentHealth != playerController.maxHealth){
+            source.GenerateImpulse();
             gemCount -= itemCost;
             gemText.text = gemCount.ToString();
 
