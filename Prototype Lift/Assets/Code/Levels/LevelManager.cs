@@ -74,6 +74,7 @@ public class LevelManager : MonoBehaviour
             levelPortal.activatePortal();
 
             if(!isComplete){
+                FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
                 levelText.text = "COMPLETE";
                 levelBar.gameObject.SetActive(true);
             }

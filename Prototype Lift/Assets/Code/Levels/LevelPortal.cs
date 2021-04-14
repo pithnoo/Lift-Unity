@@ -59,11 +59,12 @@ public class LevelPortal : MonoBehaviour
                 source.GenerateImpulse();
 
                 if(levelManager.currentLevel == 5){
-                    
+                    StartCoroutine("endGame");
                 }
                 else{
                     if (isMerchant)
                     {
+                        FindObjectOfType<AudioManager>().Play("LevelTheme");
                         levelManager.currentLevel++;
                         levelLoader.loadLevelAndSave(1);
                     }
@@ -114,6 +115,7 @@ public class LevelPortal : MonoBehaviour
     }
 
     IEnumerator endGame(){
+        FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
         levelLoader.loadLevelAndSave(3);
         yield return new WaitForSeconds(2);
         FindObjectOfType<AudioManager>().Play("MenuTheme");

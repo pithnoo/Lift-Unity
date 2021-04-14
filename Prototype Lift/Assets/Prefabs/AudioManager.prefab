@@ -82,7 +82,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: EnemyHurt
     clip: {fileID: 8300000, guid: b81bbdddc5b4a6c43991bad6ebdcc37a, type: 3}
-    volume: 0.85
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -175,5 +175,11 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: LevelTheme
+    clip: {fileID: 8300000, guid: ebb3689e81a00f84b9b11d00fb6fedc6, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   currentSong: 

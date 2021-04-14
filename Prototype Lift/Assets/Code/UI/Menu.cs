@@ -55,5 +55,6 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt("SelectedWeapon", selectedWeapon);
         FindObjectOfType<AudioManager>().Play("Select");
         levelLoader.loadLevel(1);
+        FindObjectOfType<AudioManager>().Play("LevelTheme");
     }
 }

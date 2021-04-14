@@ -177,6 +177,7 @@ public class PlayerController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 FindObjectOfType<AudioManager>().Play("PlayerDeath");
+                FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
                 source.GenerateImpulse();
                 Instantiate(playerDeathParticle, transform.position, transform.rotation);
                 crosshair.isGameOver = true;

@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume(){
+        AudioListener.volume = 1f;
         FindObjectOfType<AudioManager>().Play("Pause");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause(){
         FindObjectOfType<AudioManager>().Play("Pause");
+        AudioListener.volume = .5f;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         GameIsPaused = true;
@@ -49,7 +51,8 @@ public class PauseMenu : MonoBehaviour
         if(FindObjectOfType<PlayerController>() != null){
             FindObjectOfType<PlayerController>().invincible = true;
         }
-        
+        AudioListener.volume = 1f;
+        FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
         FindObjectOfType<AudioManager>().Play("Select");
         levelLoader.loadLevel(0);
         FindObjectOfType<AudioManager>().Play("MenuTheme");
