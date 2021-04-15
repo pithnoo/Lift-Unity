@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public LevelManager levelManager;
     public AudioManager audioManager;
-    
+ 
     void Start(){
         healthBar = FindObjectOfType<HealthBar>();
         dashBar = FindObjectOfType<DashBar>();
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
         levelManager = FindObjectOfType<LevelManager>();
         audioManager = FindObjectOfType<AudioManager>();
+        //pauseMenu = FindObjectOfType<PauseMenu>();
 
         healthBar.SetMaxHealth(maxHealth);
 
@@ -100,19 +101,21 @@ public class PlayerController : MonoBehaviour
 
     void DashAbility()
     {
-        if (isRecharging)
-        {
-            return;
+        if(!PauseMenu.GameIsPaused){
+            if (isRecharging)
+            {
+                return;
+            }
+            if (isDashing)
+            {
+                StartCoroutine("Dash");
+            }
+            if (dashCounter <= 0)
+            {
+                StartCoroutine("Recharge");
+                return;
+            }
         }
-        if (isDashing)
-        {
-            StartCoroutine("Dash");
-        }
-        if (dashCounter <= 0)
-        {
-            StartCoroutine("Recharge");
-            return;
-        }   
     }
 
     IEnumerator Dash()

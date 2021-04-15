@@ -53,6 +53,7 @@ public class PauseMenu : MonoBehaviour
         }
         AudioListener.volume = 1f;
         FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
+        FindObjectOfType<AudioManager>().stopPlaying("ShopTheme");
         FindObjectOfType<AudioManager>().Play("Select");
         levelLoader.loadLevel(0);
         FindObjectOfType<AudioManager>().Play("MenuTheme");

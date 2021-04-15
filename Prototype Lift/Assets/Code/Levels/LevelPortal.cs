@@ -64,12 +64,14 @@ public class LevelPortal : MonoBehaviour
                 else{
                     if (isMerchant)
                     {
-                        FindObjectOfType<AudioManager>().Play("LevelTheme");
+                        StartCoroutine("delayLevelTheme");
                         levelManager.currentLevel++;
                         levelLoader.loadLevelAndSave(1);
                     }
                     else
                     {
+                        //FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
+                        FindObjectOfType<AudioManager>().Play("ShopTheme");
                         levelLoader.loadLevelAndSave(2);
                     }
                 }              
@@ -115,9 +117,15 @@ public class LevelPortal : MonoBehaviour
     }
 
     IEnumerator endGame(){
-        FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
+        //FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
         levelLoader.loadLevelAndSave(3);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         FindObjectOfType<AudioManager>().Play("MenuTheme");
+    }
+
+    IEnumerator delayLevelTheme(){
+        FindObjectOfType<AudioManager>().stopPlaying("ShopTheme");
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("LevelTheme");
     }
 }
