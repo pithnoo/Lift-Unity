@@ -43,6 +43,7 @@ public class Target : MonoBehaviour
         if(other.tag == "Player" && !playerController.invincible){
 
             attackDetails.damageAmount = collisionDamage;
+            transform.parent.SendMessage("forceFieldBroken"); //FIXES INVINCIBLITY
 
             other.transform.SendMessage("damage", attackDetails);
             Instantiate(deathParticle, transform.position, transform.rotation);
