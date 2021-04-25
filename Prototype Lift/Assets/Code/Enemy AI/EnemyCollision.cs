@@ -8,6 +8,7 @@ public class EnemyCollision : MonoBehaviour
     private AttackDetails attackDetails;
     public float collisionDamage;
     public GameObject deathParticle;
+    public Enemy2 enemy2;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +16,7 @@ public class EnemyCollision : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Player" && !player.invincible){
-            FindObjectOfType<AudioManager>().Play("PlayerHurt");
+        if(other.tag == "Player" && !player.invincible && !enemy2.invincible){
             
             attackDetails.damageAmount = collisionDamage;
 
